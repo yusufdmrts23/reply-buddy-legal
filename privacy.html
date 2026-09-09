@@ -19,10 +19,11 @@
 your information. It is written to describe the app as it actually behaves, not as a general template.</p>
 
 <div class="note">
-  <p><strong>The short version.</strong> Your screenshots never leave your phone. The text of your last
-  few messages — up to six — is sent to an AI service to write replies, and neither we nor that service keeps it in
-  a permanent record. There is no account, we never see your name or email, and nothing is sent anywhere
-  until you switch AI replies on yourself.</p>
+  <p><strong>The short version.</strong> Your screenshots never leave your phone. The words on your
+  screenshot — the messages and whatever else is on the screen below the top bar — are sent to an AI
+  service to write replies, with verification codes masked first, and neither we nor that service keeps
+  them in a permanent record. There is no account, we never see your name or email, and nothing is sent
+  anywhere until you switch AI replies on yourself.</p>
 </div>
 
 <h2>1. Who we are</h2>
@@ -56,22 +57,21 @@ screenshots; typing and your saved replies continue to work.</p>
 <div class="scroll">
 <table>
   <tr><th>Sent</th><th>Detail</th></tr>
-  <tr><td>Message text</td><td>The text of up to the <strong>last six messages</strong> visible in the screenshot, each marked as yours or the other person's</td></tr>
-  <tr><td>Side certainty</td><td>When a message's side was guessed from the screenshot's layout rather than read clearly, a single yes/no flag says so, so a reply is not built on a guess. Nothing else about the guess leaves your phone</td></tr>
+  <tr><td>Screen text</td><td>Every line of text read from the screenshot <strong>below the top bar</strong>, with where each line sat on the screen and the colour behind it, so the AI can tell the messages from the buttons and who said what. The status bar and the bar with the other person's name are cut off before reading and are never sent. The AI reads the conversation out of this text on its own; your phone does not sort it first</td></tr>
   <tr><td>Your draft</td><td>Whatever is already in the message box when you ask, up to 280 characters</td></tr>
   <tr><td>Your writing samples</td><td>Up to ten of your own messages that you pasted under Settings → How you text, <strong>only if you saved any</strong>, so replies can match how you write. Kept on your phone; sent with the request and never stored by us</td></tr>
-  <tr><td>Settings</td><td>The mode (everyday, dating, work), the tone you picked, and the language detected in the conversation</td></tr>
+  <tr><td>Settings</td><td>The mode (everyday, dating, work)</td></tr>
   <tr><td>Anonymous identifier</td><td>To check your allowance and subscription status</td></tr>
 </table>
 </div>
-<p><strong>Text read from a screenshot is filtered before it is sent.</strong> A message that looks
+<p><strong>Text read from a screenshot is filtered before it is sent.</strong> A line that looks
 machine-generated — a verification code, a security notice, a &ldquo;do not reply&rdquo; message — is
-dropped from the conversation entirely, and a run of digits that a nearby word marks as a code is
-replaced with <code>••••</code>. Your draft and your saved writing samples are your own words, typed
-by you, and are sent exactly as you wrote them.</p>
-<p><strong>We never send:</strong> the screenshot image, your contacts, the name of the app you are
-replying in, your location, your identity, or anything you type on the keyboard outside of a reply
-request.</p>
+dropped entirely, and a run of digits that a nearby word marks as a code is replaced with
+<code>••••</code>. A screenshot with nothing left after that is not sent at all. Your draft and your
+saved writing samples are your own words, typed by you, and are sent exactly as you wrote them.</p>
+<p><strong>We never send:</strong> the screenshot image, the top of the screen (the status bar and the
+other person's name), your contacts, the name of the app you are replying in, your location, your
+identity, or anything you type on the keyboard outside of a reply request.</p>
 
 <h2>5. Nothing goes anywhere until you agree</h2>
 <p>The AI features are off until you explicitly turn them on inside the app. Until you do, no message
@@ -157,7 +157,7 @@ signalled in the app. Continuing to use Reply Buddy after a change means you acc
 <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>.</p>
 
 <footer>
-  Reply Buddy: AI Keyboard · <a href="terms.html">Terms of Use</a> · Last updated 7 September 2026
+  Reply Buddy: AI Keyboard · <a href="terms.html">Terms of Use</a> · Last updated 9 September 2026
 </footer>
 </div>
 </body>
