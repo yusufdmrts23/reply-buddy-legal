@@ -150,8 +150,8 @@ seconds it takes to produce your reply. Everything we do keep is listed here:</p
   <tr><td>Device key, counter and device-token hash</td><td>To tell a real installation from a script
       (section 2)</td><td>Key: until the app is deleted. Token: 90 days</td></tr>
   <tr><td>One row per request recording whether the device evidence checked out</td><td>To see whether
-      the protection is working before it is ever used to refuse anything</td><td>Short-lived
-      diagnostics; not needed beyond about a week and cleared periodically</td></tr>
+      the protection is working before it is ever used to refuse anything</td><td><strong>7 days.</strong>
+      A scheduled job deletes them every night</td></tr>
 </table>
 
 <p>Each of those rows is tied to the anonymous identifier and none of them contains anything you
