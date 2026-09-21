@@ -12,18 +12,19 @@
 
 <header>
   <h1>Privacy Policy</h1>
-  <p class="meta">Reply Buddy: AI Keyboard · Effective 7 September 2026</p>
+  <p class="meta">Reply Buddy: AI Keyboard · Effective 21 September 2026</p>
 </header>
 
 <p>Reply Buddy helps you write replies to messages. This policy explains exactly what the app does with
-your information. It is written to describe the app as it actually behaves, not as a general template.</p>
+your information. It is written to describe the app as it actually behaves, not as a general template.
+Where the honest answer is less flattering than the reassuring one, the honest answer is here.</p>
 
 <div class="note">
-  <p><strong>The short version.</strong> Your screenshots never leave your phone. The words on your
-  screenshot — the messages and whatever else is on the screen below the top bar — are sent to an AI
-  service to write replies, with verification codes masked first, and neither we nor that service keeps
-  them in a permanent record. There is no account, we never see your name or email, and nothing is sent
-  anywhere until you switch AI replies on yourself.</p>
+  <p><strong>The short version.</strong> The screenshot image never leaves your phone. The words read
+  from it are sent to our server and on to an AI service to write your reply, with verification codes
+  masked first, and neither we nor that service keeps them in a permanent record. There is no account
+  and we never see your name or email. <strong>No message content of any kind is sent anywhere until
+  you switch AI replies on yourself</strong>, and you can switch them off again at any time.</p>
 </div>
 
 <h2>1. Who we are</h2>
@@ -31,134 +32,271 @@ your information. It is written to describe the app as it actually behaves, not 
 the purposes of this policy. You can reach us at
 <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>.</p>
 
-<h2>2. There is no account</h2>
-<p>Reply Buddy does not ask you to register. It does not collect your name, email address, phone number,
-address, contacts or date of birth. When the app first needs to talk to our server it creates an
-anonymous identifier — a random string with nothing personal in it — so that your daily allowance and
-subscription status can be recognised. That identifier is not linked to your identity.</p>
+<h2>2. There is no account, but there is an identifier</h2>
+<p>Reply Buddy does not ask you to register. It does not collect your name, email address, phone
+number, address, contacts or date of birth. When the app first needs to talk to our server it creates
+an anonymous identifier — a random string with nothing personal in it — so that your subscription
+status and your daily usage count can be recognised. That identifier is not linked to your identity.</p>
+
+<p>Two further per-install values exist, and we would rather list them than let "there is no account"
+imply there is nothing:</p>
+
+<ul>
+  <li>A <strong>device key</strong>, created by Apple's App Attest on your device. We store its public
+      half and a counter, so we can tell that requests come from a genuine copy of the app rather than
+      from a script. The private half never leaves the device's secure hardware and we never see it.</li>
+  <li>A <strong>device token</strong>, a random string the keyboard presents instead of a signature
+      because a keyboard extension cannot attest itself. We store only a hash of it, and it expires
+      after 90 days.</li>
+</ul>
+
+<p>Neither identifies you. Both are tied to the installation, not to a person, and both disappear when
+you delete the app.</p>
 
 <h2>3. Screenshots stay on your phone</h2>
-<p>Reply Buddy works by reading a screenshot of a conversation. To be precise about what that involves:</p>
+<p>Reply Buddy works by reading a screenshot of a conversation. To be precise about what that
+involves:</p>
+
 <ul>
-  <li>Reply Buddy reads <strong>only your single most recent screenshot</strong>. In the keyboard that
+  <li><strong>Reply Buddy reads only your single most recent screenshot.</strong> In the keyboard that
       happens while the keyboard is open — when you open it, when a new screenshot appears, and when
       you tap the capture button. In the app it happens while the app is open. Nothing is read when
       neither is on screen, and it does not browse, scan or index your photo library.</li>
-  <li>The text is extracted <strong>on your device</strong>, using Apple's built-in on-device text
+  <li><strong>The text is extracted on your device</strong>, using Apple's built-in on-device text
       recognition.</li>
   <li><strong>The image itself is never uploaded.</strong> It does not reach our servers or any third
       party. Only the recovered text is sent, and only after you have turned AI replies on.</li>
+  <li><strong>The top of the screenshot is cropped away before it is read.</strong> We cut a fixed band
+      from the top — the height of the status bar and the bar carrying the other person's name — so in
+      normal use neither is read at all. This is a measurement, not a recogniser: on an unusual layout
+      a line from that area could survive the crop. We would rather tell you that than claim a
+      guarantee the code does not make.</li>
 </ul>
+
 <p>This requires Photos permission, which iOS asks for during setup. If you decline, the app cannot read
 screenshots; typing and your saved replies continue to work.</p>
 
 <h2>4. What is sent when you ask for replies</h2>
-<p>When you request replies, the following is sent to our server and then to our AI provider:</p>
-<div class="scroll">
+<p>When you request a reply, the following is sent to our server and then, apart from the last two
+rows, on to our AI provider:</p>
+
 <table>
   <tr><th>Sent</th><th>Detail</th></tr>
-  <tr><td>Screen text</td><td>Every line of text read from the screenshot <strong>below the top bar</strong>, with where each line sat on the screen and the colour behind it, so the AI can tell the messages from the buttons and who said what. The status bar and the bar with the other person's name are cut off before reading and are never sent. The AI reads the conversation out of this text on its own; your phone does not sort it first</td></tr>
-  <tr><td>Your draft</td><td>Whatever is already in the message box when you ask, up to 280 characters</td></tr>
-  <tr><td>Your writing samples</td><td>Up to ten of your own messages that you pasted under Settings → How you text, <strong>only if you saved any</strong>, so replies can match how you write. Kept on your phone; sent with the request and never stored by us</td></tr>
+  <tr><td>Screen text</td><td>Every line of text read from the screenshot below the cropped top band,
+      with where each line sat on the screen and the colour behind it, so the AI can tell the messages
+      from the buttons and who said what. The AI reads the conversation out of this text on its own;
+      your phone does not sort it first</td></tr>
+  <tr><td>Your draft</td><td>Whatever is already in the message box when you ask, up to 280
+      characters</td></tr>
+  <tr><td>Replies already shown</td><td>Up to six replies you have already been given in this session,
+      and up to four still on the bar, so a new one is not a repeat of them</td></tr>
+  <tr><td>Your writing samples</td><td>Up to ten of your own messages that you pasted under Settings →
+      How you text, only if you saved any, so replies can match how you write. Kept on your phone; sent
+      with the request and never stored by us</td></tr>
   <tr><td>Settings</td><td>The mode (everyday, dating, work)</td></tr>
-  <tr><td>Anonymous identifier</td><td>To check your allowance and subscription status</td></tr>
+  <tr><td>Anonymous identifier</td><td>To check your subscription status and your daily count</td></tr>
+  <tr><td>Device evidence</td><td>The App Attest signature, or the keyboard's device token, described
+      in section 2. Sent with every request, checked by our server, and never passed on to the AI
+      provider</td></tr>
 </table>
-</div>
+
 <p><strong>Text read from a screenshot is filtered before it is sent.</strong> A line that looks
 machine-generated — a verification code, a security notice, a &ldquo;do not reply&rdquo; message — is
 dropped entirely, and a run of digits that a nearby word marks as a code is replaced with
 <code>••••</code>. A screenshot with nothing left after that is not sent at all. Your draft and your
 saved writing samples are your own words, typed by you, and are sent exactly as you wrote them.</p>
-<p><strong>We never send:</strong> the screenshot image, the top of the screen (the status bar and the
-other person's name), your contacts, the name of the app you are replying in, your location, your
-identity, or anything you type on the keyboard outside of a reply request.</p>
 
-<h2>5. Nothing goes anywhere until you agree</h2>
+<p><strong>We never send:</strong> the screenshot image, your contacts, the name of the app you are
+replying in, your location, your identity, or anything you type on the keyboard outside of a reply
+request.</p>
+
+<div class="note">
+  <p><strong>About other people's names.</strong> The cropped band removes the contact name at the top
+  of a chat. It does not remove names that appear inside the conversation itself — in a group chat the
+  sender labels are ordinary lines on the screen and are read like any other line. If you capture a
+  group conversation, the participants' display names are part of the text that is sent.</p>
+</div>
+
+<h2>5. Nothing goes anywhere until you agree, and you can take it back</h2>
 <p>The AI features are off until you explicitly turn them on inside the app. Until you do, no message
-content of any kind is transmitted.</p>
+content of any kind is transmitted. This is enforced in three separate places in the code rather than
+trusted to one.</p>
 
-<h2>6. What we keep</h2>
+<p><strong>To withdraw consent</strong>, open Reply Buddy and turn <strong>AI replies</strong> off in
+Settings. From that moment nothing further is sent: the keyboard stops offering replies and goes back
+to being a keyboard. Turning it off does not delete what is already held — to ask for that, see
+section 15.</p>
+
+<p>To be straight with you about what else happens: the app itself does talk to the network when you
+open it, before you have consented to anything, in order to create the anonymous identifier, check
+your subscription, and send the analytics and crash reporting described in section 9. None of that
+carries message content.</p>
+
+<h2>6. What we keep, and for how long</h2>
+
 <h3>On our servers</h3>
-<p><strong>We do not store your message content.</strong> Conversation text, drafts and generated replies
-are not written to our database and are not written to our logs. They exist only for the seconds it
-takes to produce your replies. What we do store, tied to your anonymous identifier, is: a daily count of
-how many times you asked for replies, your subscription status, and the totals we need to monitor cost.</p>
+<p><strong>We do not store your message content.</strong> Conversation text, drafts and generated
+replies are not written to our database and are not written to our logs. They exist only for the
+seconds it takes to produce your reply. Everything we do keep is listed here:</p>
+
+<table>
+  <tr><th>What</th><th>Why</th><th>Kept for</th></tr>
+  <tr><td>Anonymous identifier</td><td>To recognise your subscription and your usage</td>
+      <td>Until you ask us to delete it</td></tr>
+  <tr><td>Daily reply count, and the token totals we use to monitor cost</td><td>The fair-use limit,
+      and knowing what the service costs to run</td><td>Rolling, by day; removed on request</td></tr>
+  <tr><td>Subscription status and expiry</td><td>To know whether Pro is active</td><td>For the life of
+      the subscription and the period we may need it for billing and refund questions</td></tr>
+  <tr><td>Device key, counter and device-token hash</td><td>To tell a real installation from a script
+      (section 2)</td><td>Key: until the app is deleted. Token: 90 days</td></tr>
+  <tr><td>One row per request recording whether the device evidence checked out</td><td>To see whether
+      the protection is working before it is ever used to refuse anything</td><td>Short-lived
+      diagnostics; not needed beyond about a week and cleared periodically</td></tr>
+</table>
+
+<p>Each of those rows is tied to the anonymous identifier and none of them contains anything you
+wrote. Every request to our server, like every request to any web service, arrives with your IP
+address attached; our own logs do not record it, and our hosting provider's platform logs may retain
+it briefly for operational purposes.</p>
 
 <h3>On your phone</h3>
-<p>The most recent conversation the app read is kept in a private container on your device so the
-keyboard can use it. <strong>It is overwritten every time you capture a new one</strong> — there is no
-history, and no earlier conversation is retained. Deleting the app removes it.</p>
+<p>Reply Buddy keeps a private container on your device, readable only by the app and its keyboard, so
+the keyboard has something to work with. It holds the most recent conversation that was read, the most
+recent screen capture, the reply you were last given, your saved writing samples, your settings, a
+record of whether Pro is active, and the device key and token from section 2.</p>
+
+<p>The conversation and the capture are <strong>overwritten each time you capture a new one</strong> —
+there is no history and no earlier conversation is kept. Deleting the app removes the container and
+everything in it.</p>
 
 <h2>7. The AI provider</h2>
-<p>Replies are generated by Anthropic's Claude models. We want to be exact here rather than reassuring,
-because the distinction matters:</p>
+<p>Replies are generated by Anthropic's Claude models. We want to be exact here rather than
+reassuring, because the distinction matters:</p>
+
 <ul>
-  <li>Anthropic's commercial terms state that Anthropic <strong>may not train models on customer
+  <li>Anthropic's commercial terms state that <strong>Anthropic may not train models on customer
       content</strong> from its services.</li>
-  <li>Anthropic's privacy documentation states that inputs and outputs are
-      <strong>automatically deleted within 30 days</strong> of receipt or generation, and may be kept
-      longer where a usage-policy violation is flagged.</li>
+  <li>Anthropic's privacy documentation states that inputs and outputs are <strong>automatically
+      deleted within 30 days</strong> of receipt or generation — with exceptions. Where a submission is
+      flagged under Anthropic's usage policy, inputs and outputs may be kept for up to two years, and
+      trust-and-safety classification scores for up to seven.</li>
 </ul>
-<p>So "we do not store your messages" is true of us, and thirty days is not zero. We will not claim your
-conversations vanish the instant they are used, because that would not be accurate.</p>
 
-<h2>8. Analytics and crash reports</h2>
-<p>The main app — <strong>not the keyboard</strong> — sends a small amount of product analytics through
-PostHog and crash reports through Sentry. What is sent is event names and counts, such as
-<code>app_opened</code>, <code>full_access_granted</code>, <code>sample_reply_generated</code> and
-whether a purchase completed.</p>
+<p>So &ldquo;we do not store your messages&rdquo; is true of us, and thirty days is not zero. We will
+not claim your conversations vanish the instant they are used, because that would not be accurate.</p>
+
+<h2>8. The other companies involved</h2>
+<p>These are everyone who touches your data, and what each one does:</p>
+
+<table>
+  <tr><th>Who</th><th>What they handle</th></tr>
+  <tr><td>Supabase</td><td>Our server. Your screen text passes through it on its way to the AI
+      provider, and our database of counters and subscription records lives there. Processing is in the
+      United States</td></tr>
+  <tr><td>Anthropic</td><td>Generates the replies, as described in section 7</td></tr>
+  <tr><td>Apple</td><td>Processes payment, and provides the on-device text recognition and App
+      Attest</td></tr>
+  <tr><td>RevenueCat</td><td>Records what you bought and whether it is still active</td></tr>
+  <tr><td>PostHog</td><td>Product analytics for the app, described in section 9</td></tr>
+  <tr><td>Sentry</td><td>Crash and error reports for the app, described in section 9</td></tr>
+</table>
+
+<p>We have contracts in place with these providers under which they act on our instructions, and we
+require that any third party with whom the app shares user data provides the same or equal protection
+of that data as is stated in this policy.</p>
+
+<h2>9. Analytics and crash reports</h2>
+<p>The main app — <strong>not the keyboard</strong> — sends product analytics through PostHog and
+crash and error reports through Sentry. What is sent is event names and counts, such as
+<code>app_opened</code>, <code>full_access_granted</code> and whether a purchase completed, along with
+the app version, the device model and operating-system version, and the IP address the request came
+from. Sentry also receives short diagnostic messages we log ourselves when something goes wrong, such
+as a failure to reach our own server.</p>
+
 <p><strong>No message content, no reply text and no draft is ever included</strong>, and the keyboard
-extension contains no analytics software at all.</p>
+extension contains no analytics software at all. Counts of how the keyboard was used — how many times
+it appeared, how much memory it used — are written to the shared container and sent by the app, as
+numbers with no text in them.</p>
 
-<h2>9. Subscriptions</h2>
+<h2>10. Subscriptions</h2>
 <p>Purchases are handled by Apple and managed through RevenueCat, which records what you bought and
 whether it is active. <strong>We never see or receive your payment details</strong> — Apple processes
 payment and does not share your card information with us.</p>
 
-<h2>10. Permissions the app asks for</h2>
-<div class="scroll">
+<h2>11. Permissions the app asks for</h2>
 <table>
   <tr><th>Permission</th><th>Why</th><th>If you decline</th></tr>
-  <tr><td>Photos</td><td>To read your most recent screenshot</td><td>Typing and saved replies still work; screenshot reading does not</td></tr>
-  <tr><td>Keyboard Full Access</td><td>Required by iOS for the keyboard to use the network and read a screenshot</td><td>Typing and saved replies still work; AI replies do not</td></tr>
+  <tr><td>Photos</td><td>To read your most recent screenshot</td><td>Typing and saved replies still
+      work; screenshot reading does not</td></tr>
+  <tr><td>Keyboard Full Access</td><td>Required by iOS for the keyboard to use the network and read a
+      screenshot</td><td>Typing and saved replies still work; AI replies do not</td></tr>
 </table>
-</div>
 
-<h2>11. Apple's privacy label</h2>
-<p>In the App Store, Reply Buddy declares that <strong>User Content</strong> is collected and not linked
-to your identity. We declare it because Apple defines collection as transmitting data off the device and
-storing it in readable form for longer than it takes to service the request — and our AI provider's
-thirty-day deletion window is longer than that. We would rather over-declare than describe this
-inaccurately.</p>
+<h2>12. We do not sell or share your personal information</h2>
+<p>We do not sell your personal information, and we have not done so. We do not share it for
+cross-context behavioural advertising, and we have not done so. There is no advertising in Reply
+Buddy and no advertising network receives anything from it. We do not use your message content to
+build a profile of you, to infer anything about you, or for any purpose other than producing the reply
+you asked for.</p>
 
-<h2>12. Children</h2>
+<h2>13. Where your information comes from</h2>
+<p>Three sources, and no others: <strong>from you</strong> (the screenshot you choose to capture, your
+draft, your writing samples and your settings); <strong>from your device</strong> (the App Attest key,
+the app version and device model, and the IP address any request carries); and <strong>from Apple and
+RevenueCat</strong> (whether a subscription is active).</p>
+
+<h2>14. Apple's privacy label</h2>
+<p>In the App Store, Reply Buddy declares that <strong>User Content is collected and not linked
+to your identity</strong>. We declare it because Apple defines collection as transmitting data off the
+device and storing it in readable form for longer than it takes to service the request — and our AI
+provider's thirty-day deletion window is longer than that. We would rather over-declare than describe
+this inaccurately.</p>
+
+<h2>15. Children</h2>
 <p>Reply Buddy is not directed at children. It is rated for users aged 17 and over and should not be
-used by anyone under 13, or under the minimum age of digital consent where you live.</p>
+used by anyone under 13, or under the minimum age of digital consent where you live. We do not
+knowingly collect information from a child. If you believe a child has used the app and you would like
+what is held against that installation removed, write to us and we will remove it.</p>
 
-<h2>13. Your rights</h2>
+<h2>16. Your rights</h2>
 <p>Because there is no account, most of your data is either on your device or is an anonymous counter.
-You can delete everything held on your device by deleting the app. To ask what is held against your
-anonymous identifier, or to have it deleted, email
-<a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>. Depending on where you live you may
-have rights of access, correction, deletion, restriction and portability, and the right to complain to
-your data protection authority.</p>
+You can delete everything held on your device by deleting the app.</p>
 
-<h2>14. Data transfers and security</h2>
+<p>To ask what is held against your anonymous identifier, or to have it deleted, email
+<a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>. We will not ask you to create an
+account to make the request. Because the identifier is anonymous, you will need to send it to us so we
+can find the right record — the app shows it under Settings → About. Depending on where you live you
+may have rights of access, correction, deletion and portability, the right to object to or restrict
+processing, the right not to be discriminated against for exercising them, and the right to complain
+to your data protection authority.</p>
+
+<h2>17. A word about the other person</h2>
+<p>A screenshot of a conversation contains someone else's words as well as your own. You decide what
+to capture, and you are responsible for what you choose to capture and send. Please think about
+whether the other person would object, and do not use Reply Buddy on conversations you are not meant
+to be reading.</p>
+
+<h2>18. Data transfers and security</h2>
 <p>Our servers and our AI provider operate in the United States, so if you use the app elsewhere your
-message text is processed there. All transmission is encrypted in transit (HTTPS/TLS). The conversation
-stored on your device is written with iOS file protection so it is unreadable while your phone is locked.</p>
+message text is processed there. All transmission is encrypted in transit (HTTPS/TLS). The
+conversation stored on your device is written with iOS file protection so it is unreadable while your
+phone is locked. No transmission or storage is ever completely secure, and we cannot promise absolute
+security.</p>
 
-<h2>15. Changes</h2>
+<h2>19. Changes</h2>
 <p>If this policy changes, the effective date above changes with it, and material changes will be
-signalled in the app. Continuing to use Reply Buddy after a change means you accept the updated policy.</p>
+signalled in the app. Continuing to use Reply Buddy after a change means you accept the updated
+policy.</p>
 
-<h2>16. Contact</h2>
+<h2>20. Contact</h2>
 <p>Questions, requests or complaints:
 <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>.</p>
 
 <footer>
-  Reply Buddy: AI Keyboard · <a href="terms.html">Terms of Use</a> · Last updated 9 September 2026
+  <p class="meta">Reply Buddy: AI Keyboard · <a href="terms.html">Terms of Use</a> · Last updated
+  21 September 2026</p>
 </footer>
+
 </div>
 </body>
 </html>
