@@ -12,22 +12,25 @@
 
 <header>
   <h1>Privacy Policy</h1>
-  <p class="meta">Reply Buddy: AI Keyboard · Effective 23 September 2026</p>
+  <p class="meta">Reply Buddy: AI Keyboard · Effective 24 September 2026</p>
 </header>
 
-<p>Reply Buddy helps you write replies to messages. This policy explains exactly what the app does with
-your information. It is written to describe the app as it actually behaves, not as a general template.
+<p>Reply Buddy helps you write replies to messages. <strong>The replies are written by AI</strong> —
+Anthropic's Claude — not by a person. This policy explains exactly what the app does with your
+information. It is written to describe the app as it actually behaves, not as a general template.
 Where the honest answer is less flattering than the reassuring one, the honest answer is here.</p>
 
 <div class="note">
   <p><strong>The short version.</strong> There are two ways to get a reply, and they send different
   things. <strong>The keyboard</strong> (and <em>Reply to a screenshot</em> in the app) reads your
   screenshot on your phone and sends only the words, with verification codes masked first; on this path
-  the picture is never sent. <strong>The Chat tab</strong> in the app sends the picture itself,
-  with whatever is on it and whatever you type, because that is how it reads the conversation — and it
-  asks you first. Our server keeps none of it; our AI provider deletes it within 30 days unless a
-  safety check flags it. Your chats are saved on your phone until you delete them. There is no account and we never ask for your name or email. <strong>No message content of any kind is sent anywhere until
-  you switch AI replies on yourself</strong>, and you can switch them off again at any time.</p>
+  the picture is never sent. <strong>The Chat tab</strong> in the app sends the picture itself, with
+  whatever is on it and whatever you type, because that is how it reads the conversation — and it asks
+  you first. Our server keeps none of it; our AI provider deletes it within 30 days unless a safety
+  check flags it. Your chats are saved on your phone until you delete them. There is no account and we
+  never ask for your name or email. <strong>No message content of any kind is sent anywhere until you
+  switch AI replies on yourself</strong>, and you can switch them off again at any time. You can delete
+  your data from Settings; section 16 says exactly what that reaches. Reply Buddy is for adults: you must be 18 or older.</p>
 </div>
 
 <h2>1. Who we are</h2>
@@ -38,11 +41,13 @@ the purposes of this policy. You can reach us at
 <h2>2. There is no account, but there is an identifier</h2>
 <p>Reply Buddy does not ask you to register. It does not ask for your name, email address, phone
 number, address, contacts or date of birth (though a picture you send from Chat carries whatever is on
-it). When the app first needs to talk to our server it creates
-an anonymous identifier — a random string with nothing personal in it — so that your subscription
-status and your daily usage count can be recognised. That identifier is not linked to your identity.</p>
+it). When the app first needs to talk to our server it creates an anonymous identifier — a random
+string with no name or contact details in it — so that your subscription status and your daily usage
+count can be recognised. It is still a persistent identifier: the app ties your analytics, crash
+reports and purchase record to it (sections 8 and 9), and the privacy laws of several states treat an
+identifier like this, and everything tied to it, as personal information. So do we.</p>
 
-<p>Two further per-install values exist, and we would rather list them than let "there is no account"
+<p>A few further per-install values exist, and we would rather list them than let "there is no account"
 imply there is nothing:</p>
 
 <ul>
@@ -50,13 +55,15 @@ imply there is nothing:</p>
       half and a counter, so we can tell that requests come from a genuine copy of the app rather than
       from a script. The private half never leaves the device's secure hardware and we never see it.</li>
   <li>A <strong>device token</strong>, a random string the keyboard presents instead of a signature,
-      because a keyboard extension cannot attest itself; the app presents it too when it cannot sign. We store only a hash of it, and it expires
-      after 90 days.</li>
+      because a keyboard extension cannot attest itself; the app presents it too when it cannot sign. We
+      store only a hash of it, and it stops working after 90 days.</li>
+  <li>Our analytics provider, PostHog, and our crash reporter, Sentry, each create their own random
+      identifier for the installation, alongside ours.</li>
 </ul>
 
-<p>Neither identifies you. Both are tied to the installation, not to a person. Deleting the app removes
-both from your phone; our server's records of them stay until you ask us to delete them, because it
-cannot tell when the app is deleted (section 6).</p>
+<p>None of these contains your name or contact details. Deleting the app removes them from your phone;
+our server's records stay until you delete them from Settings or ask us to (section 16), because our
+server cannot tell when the app is deleted.</p>
 
 <h2>3. Screenshots: two paths, and what each one sends</h2>
 <p>Reply Buddy works by reading a screenshot of a conversation, and there are two ways it does that.
@@ -107,9 +114,9 @@ say what you want to say, and the AI reads the picture itself.</p>
 </ul>
 
 <p>Setup asks for full Photos access, which the keyboard and <em>Reply to a screenshot</em> need to read
-your newest screenshot, and setup cannot be finished without it. If you later limit or turn off that
-access, they can no longer read screenshots, while typing and your saved replies continue to work.
-Chat's photo picker needs no permission, so Chat can still send a picture you choose.</p>
+your newest screenshot. You can continue without it, or with only some photos: they then cannot read
+new screenshots, while typing, your saved replies and Chat keep working — Chat's photo picker needs no
+permission.</p>
 
 <h2>4. What is sent when you ask for replies</h2>
 <p>When you request a reply from the keyboard or from <em>Reply to a screenshot</em>, the following is
@@ -179,70 +186,116 @@ from, your location or your identity — though anything the picture itself show
 number or a place, is part of the picture. The re-saved picture carries no location data of its
 own.</p>
 
+<h3>Safety checks, in the same request</h3>
+<p>While it writes a reply, the AI also answers a few questions about what it was sent, so that a reply
+can be held back or changed when it would put someone at risk: whether the conversation involves
+someone thinking about harming themselves (so that the app never refuses to help then); in Chat,
+whether someone is asking for an intimate picture and what your instruction asks for (so that a small
+set of harmful requests is refused); and whether someone in a romantic conversation has said they are
+under 18 (so that no reply is written for it). These answers are processed automatically, only for the
+length of the request. Our server acts on them and does not store them. Its log line records only
+whether a reply was refused or held back (section 6) — never the answers themselves, which question led
+to a refusal, or your identifier — and none of the answers is used for anything but that reply. Our AI provider keeps them with the rest of the request, on the
+schedule in section 7.</p>
+
+<h3>Sensitive information in what you send</h3>
+<p>A conversation can contain sensitive information — something about a person's health, sex life or
+sexual orientation, religion, finances or immigration status, a crime they suffered, or the fact that
+they are a child. Several US states give that information extra protection, and California counts the
+contents of messages you send or receive (we are not their intended recipient) as sensitive personal
+information. Reply Buddy does not ask for any of it and has no use for it beyond writing the reply
+you asked for and keeping that reply safe (above). We do not sell it, share it for advertising, or build
+a profile from it. The only conclusions drawn from it are the safety checks above: our server uses them
+for that one reply and does not store them, and our AI provider keeps them with the rest of the request
+(section 7). You agree to this processing when you turn on AI replies and, for pictures, when you allow
+Chat; you can withdraw that agreement at any time by turning AI replies off (section 5). If a conversation you send mentions health, our
+<a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a> applies too.</p>
+
 <h2>5. Nothing goes anywhere until you agree, and you can take it back</h2>
 <p>The AI features are off until you explicitly turn them on inside the app. Until you do, no message
-content of any kind is transmitted. For the keyboard this is enforced in three separate places in the
-code rather than trusted to one.</p>
+content of any kind is transmitted. You can finish setup without turning them on. For the keyboard this
+is enforced in three separate places in the code rather than trusted to one.</p>
 
 <p><strong>Chat asks a second time.</strong> Turning on AI replies covers the words the keyboard reads,
 not a picture. So the first time you send a picture from Chat, it asks once more, separately: it tells
-you that the whole picture goes to Anthropic's Claude with what you type, that our server keeps none
-of it, that Anthropic deletes it within 30 days unless a safety check flags it, and that your chats
-stay on your phone. Nothing is sent unless you choose <strong>Allow</strong>, and the app refuses to
-send a picture without that answer, whatever screen the request comes from. Your answer is stored on
-your phone.</p>
+you that the whole picture goes to Anthropic's Claude, the AI that writes the reply, with what you type
+and any writing samples you saved; that our server keeps none of it; that Anthropic deletes it within
+30 days unless a safety check flags it; and that your chats stay on your phone. Nothing is sent unless
+you choose <strong>Allow</strong>, and the app refuses to send a picture without that answer, whatever
+screen the request comes from. Your answer is stored on your phone.</p>
 
 <p><strong>To withdraw consent</strong>, open Reply Buddy and turn <strong>AI replies</strong> off in
 Settings. From that moment nothing further is sent: the keyboard stops offering replies and goes back
-to being a keyboard, Chat stops sending, and Chat's own permission is withdrawn too — if you turn AI
-replies on again, Chat asks again before it next sends a picture. Turning it off does not delete what
-is already held: your chats stay on your phone until you delete them (section 6), and for what is held
-elsewhere, see section 16.</p>
+to being a keyboard, <em>Reply to a screenshot</em> and Chat stop sending, and Chat's own permission is
+withdrawn too — if you turn AI replies on again, Chat asks again before it next sends a picture.
+Turning it off does not delete what is already held: your chats stay on your phone until you delete
+them (section 6), and for what is held elsewhere, see section 16.</p>
 
 <p>To be straight with you about what else happens: the app itself does talk to the network when you
 open it, before you have consented to anything, in order to create the anonymous identifier, check
-your subscription, and send the analytics and crash reporting described in section 9. None of that
-carries message content.</p>
+your subscription, and — unless you turn <strong>Share usage data</strong> off in Settings — send the
+analytics and crash reporting described in section 9. None of that carries message content.</p>
 
 <h2>6. What we keep, and for how long</h2>
 
 <h3>On our servers</h3>
 <p><strong>We do not store your message content or your pictures.</strong> Conversation text, pictures
 sent from Chat, what you type, drafts and generated replies are not written to our database and are
-not written to our logs. They exist only for the seconds it takes to produce your reply. Everything we
-do keep is listed here:</p>
+not written to our logs. They exist only for the seconds it takes to produce your reply. The only
+exception is anything you choose to email us (see &ldquo;If you email us&rdquo; below). Everything our
+database keeps is listed here:</p>
 
 <table>
   <tr><th>What</th><th>Why</th><th>Kept for</th></tr>
   <tr><td>Anonymous identifier</td><td>To recognise your subscription and your usage</td>
-      <td>Until you ask us to delete it</td></tr>
+      <td>Until you delete it (section 16)</td></tr>
   <tr><td>The IP address and the app's standard user-agent string (the app's name and version and the
-      iOS version) recorded with your sign-in</td><td>Kept by our sign-in service (Supabase Auth) with
-      the identifier, to keep the app signed in</td><td>Until you ask us to delete the
-      identifier</td></tr>
+      iOS version) recorded with your sign-in, and the tokens that renew it</td><td>Kept by our sign-in
+      service (Supabase Auth) with the identifier, to keep the app signed in</td><td>Until you delete
+      the identifier</td></tr>
   <tr><td>Daily reply count, and the token totals we use to monitor cost</td><td>The fair-use limit,
       which the keyboard and Chat share, and knowing what the service costs to run</td><td>One row per
-      day, kept until you ask us to delete it</td></tr>
+      day, kept until you delete the identifier</td></tr>
   <tr><td>Subscription status and expiry</td><td>To know whether Pro is active</td><td>For the life of
-      the subscription and the period we may need it for billing and refund questions</td></tr>
+      the subscription and the period we may need it for billing and refund questions, or until you
+      delete it (section 16)</td></tr>
   <tr><td>Device key, its counter and when it was last used; device-token hash, with when it was issued
-      and last used</td><td>To tell a real installation from a script (section 2)</td><td>Until you ask
-      us to delete them — our server cannot tell when the app is deleted. The token stops working after
-      90 days</td></tr>
+      and last used</td><td>To tell a real installation from a script (section 2)</td><td>Until you
+      delete the identifier — our server cannot tell when the app is deleted. The token stops working
+      after 90 days</td></tr>
+  <tr><td>Whether this installation used the one free sample reply that setup offered before 15
+      September 2026</td><td>So it was offered once</td><td>Until you delete the identifier</td></tr>
   <tr><td>One row per request recording whether the device evidence checked out</td><td>To see whether
       the protection is working before it is ever used to refuse anything</td><td><strong>7 days.</strong>
       A scheduled job deletes them every night</td></tr>
   <tr><td>A log line for each request: counts, timings and yes/no outcomes, such as how many lines were
       read, how large a picture was, and whether a reply was refused or held back. Never your words,
       the picture, a reply or your identifier</td><td>To find faults and see what the service
-      costs</td><td>Up to 7 days, kept by our hosting provider</td></tr>
+      costs</td><td>For the period our hosting provider sets for logs</td></tr>
 </table>
 
-<p>Each of the first six rows is tied to the anonymous identifier, and none of the rows contains
-anything you wrote or sent. Every request to our server, like every request to any web service,
-arrives with your IP address attached. Our sign-in service keeps the one recorded with your sign-in,
-as the table says; our own request logs do not record it, and our hosting provider's platform logs may
-retain it briefly for operational purposes.</p>
+<p>Each of the first seven rows is tied to the anonymous identifier, and none of the rows contains
+anything you wrote or sent.</p>
+
+<p><strong>Our hosting provider's own records.</strong> Every request to our server, like every request
+to any web service, arrives with your IP address attached. Our hosting provider, Supabase, keeps its own
+record of each request for a period it sets: when it arrived, the address it was sent to, the response
+code, your IP address and the approximate location and network provider it works out from that address
+(such as country, region and city), the app's user-agent string and, for signed-in requests, your
+anonymous identifier. Our own log lines do not record your IP address.</p>
+
+<h3>Kept by the other companies involved</h3>
+<table>
+  <tr><th>Who</th><th>What</th><th>Kept for</th></tr>
+  <tr><td>Anthropic</td><td>What was sent to write a reply, and the reply</td><td>Section 7: within 30
+      days, longer if flagged or where the law requires</td></tr>
+  <tr><td>PostHog</td><td>The analytics events in section 9</td><td>For the retention period PostHog
+      sets for our plan, or until you use <em>Delete my data</em> (section 16)</td></tr>
+  <tr><td>Sentry</td><td>Crash and error reports and session records (section 9)</td><td>Up to 90
+      days</td></tr>
+  <tr><td>RevenueCat</td><td>Your purchase record (section 10)</td><td>Until you delete it with
+      <em>Delete my data</em>, or for as long as the subscription record is needed</td></tr>
+</table>
 
 <h3>On your phone</h3>
 <p>Reply Buddy keeps a private container on your device, readable only by the app and its keyboard, so
@@ -257,42 +310,59 @@ everything in it.</p>
 <p>Separately, the sign-in that carries the anonymous identifier from section 2 — the identifier and
 the tokens that renew it, no content — is kept in the iOS keychain, so the keyboard can use it too.
 iOS may keep keychain items after an app is deleted, so a reinstall can come back as the same
-identifier. If you ask us to delete the identifier (section 16), that sign-in stops working and a
-reinstall starts a new one.</p>
+identifier. <em>Delete my data</em> (section 16) signs it out.</p>
+
+<p>The app also keeps a few settings of its own: whether you share usage data, and, where the law
+requires an age check, whether it passed (section 15).</p>
 
 <p><strong>Chat keeps a history, and it is yours to delete.</strong> Chats are saved in the app's own
-private storage — not the shared container, so the keyboard cannot read them. For each chat that means the picture as it was sent, what you typed, the replies and what the chat
-showed beside them (the messages it took each reply to answer, any note or refusal), an instruction
-still waiting to be sent, the mode and the dates. Separately, the app records when you allowed Chat to
-send pictures; deleting chats does not remove that record, and turning AI replies off does. Chats stay
-until you delete them: swipe a chat away, or
-use <strong>Delete all chats</strong> in the Chat list or in Settings, and they are removed from your
-phone at once. Deleting the app removes them too. They are <strong>excluded from iCloud and device
-backups</strong>, so they do not move to a new phone or come back from a restore, and they are written
-with iOS file protection so they are unreadable while your phone is locked. Deleting a chat does not
-remove the original screenshot from your Photos library, and it cannot reach the copy our AI provider
-holds (section 7).</p>
+private storage — not the shared container, so the keyboard cannot read them. For each chat that
+means the picture as it was sent, what you typed, the replies and what the chat showed beside them
+(the messages it took each reply to answer, any note or refusal), an instruction still waiting to be
+sent, the mode and the dates. Separately, the app records when you allowed Chat to send pictures;
+deleting chats does not remove that record, and turning AI replies off does. Chats stay until you
+delete them: swipe a chat away, or use <strong>Delete all chats</strong> in the Chat list or in
+Settings, and they are removed from your phone at once. Deleting the app removes them too. They are
+<strong>excluded from iCloud and device backups</strong>, so they do not move to a new phone or come
+back from a restore, and they are written with iOS file protection so they are unreadable while your
+phone is locked. Deleting a chat does not remove the original screenshot from your Photos library, and
+it cannot reach the copy our AI provider holds (section 7).</p>
+
+<h3>If you email us</h3>
+<p>A message to our support address — a question, a data request, or a report of a reply — reaches us
+with your email address and whatever it contains, and we keep it for as long as we need to deal with
+it. The <strong>Report</strong> button on a reply in Chat opens your own mail app with that reply
+already written in, so that you can tell us what was wrong with it; nothing is sent unless you send the
+email yourself, and it carries no screenshot, no instruction and no identifier unless you add them. Our
+support mailbox is a Gmail account, so Google holds these messages too (section 8), and we delete one
+on request.</p>
 
 <h2>7. The AI provider</h2>
 <p>Replies are generated by Anthropic's Claude models. We want to be exact here rather than
 reassuring, because the distinction matters:</p>
 
 <ul>
-  <li>Anthropic's commercial terms state that <strong>Anthropic may not train models on customer
-      content</strong> from its services.</li>
+  <li><strong>We do not collect, use or sell personal data to train large language models</strong>, or
+      any other AI model, and Anthropic's commercial terms state that <strong>Anthropic may not train
+      models on customer content</strong> from its services.</li>
   <li>Anthropic's privacy documentation states that inputs and outputs are <strong>automatically
       deleted within 30 days</strong> of receipt or generation — with exceptions. Where a submission is
       flagged under Anthropic's usage policy, inputs and outputs may be kept for up to two years, and
       trust-and-safety classification scores for up to seven. Anthropic may also keep them for longer
       where the law requires it.</li>
+  <li>Anthropic states that it checks images sent to its services against a database of known child
+      sexual abuse material and reports matches to the National Center for Missing &amp; Exploited
+      Children.</li>
+  <li>Anthropic receives no identifier from us: nothing it is sent says which installation it came
+      from.</li>
 </ul>
 
 <p>This applies to a picture sent from Chat exactly as it does to text: a picture is an input like any
 other. Each send is a new input — asking for a change, or continuing a chat later, sends the picture
 again, and that copy is deleted on its own schedule. Anthropic does not offer early deletion of
-individual requests, so deleting a chat on your phone
-does not delete Anthropic's copy, and we cannot ask for that on your behalf; it is deleted on
-Anthropic's schedule above.</p>
+individual requests, so deleting a chat on your phone, or using <em>Delete my data</em>, does not delete
+Anthropic's copy, and we cannot ask for that on your behalf; it is deleted on Anthropic's schedule
+above.</p>
 
 <p>So &ldquo;we do not store your messages&rdquo; is true of us, and thirty days is not zero. We will
 not claim your conversations vanish the instant they are used, because that would not be accurate.</p>
@@ -303,52 +373,72 @@ not claim your conversations vanish the instant they are used, because that woul
 <table>
   <tr><th>Who</th><th>What they handle</th></tr>
   <tr><td>Supabase</td><td>Our server. Your screen text, and from Chat the picture and what you type,
-      pass through it on their way to the AI provider, and our database of counters and subscription
-      records lives there. Processing is in the United States</td></tr>
+      pass through it on their way to the AI provider; our database of counters and subscription
+      records lives there; and it keeps its own request records (section 6). Processing is in the
+      United States</td></tr>
   <tr><td>Anthropic</td><td>Generates the replies, from text or, in Chat, from the picture, as
       described in section 7</td></tr>
   <tr><td>Apple</td><td>Processes payment, and provides the on-device text recognition, the photo
-      picker and App Attest</td></tr>
-  <tr><td>RevenueCat</td><td>Records what you bought and whether it is still active</td></tr>
+      picker, App Attest and, where the law requires, your age range (section 15)</td></tr>
+  <tr><td>RevenueCat</td><td>Records what you bought and whether it is still active, the app and iOS
+      version, when the app was first and last seen, and a country — from your purchase, or worked
+      out from your IP address, which RevenueCat does not keep</td></tr>
   <tr><td>PostHog</td><td>Product analytics for the app, described in section 9</td></tr>
   <tr><td>Sentry</td><td>Crash and error reports for the app, and a record of each app session,
       described in section 9</td></tr>
+  <tr><td>Google (Gmail)</td><td>Our support mailbox: any email you send us — a question, a data
+      request, a report of a reply — with your email address and whatever it contains (section 6)</td></tr>
 </table>
 
-<p>We have contracts in place with these providers under which they act on our instructions, and we
-require that any third party with whom the app shares user data provides the same or equal protection
-of that data as is stated in this policy.</p>
+<p>Supabase, Anthropic, RevenueCat, PostHog and Sentry each process this data for us, as our service
+provider, under terms that limit it to providing its service to us. Apple handles payment, App Attest
+and the age range under its own privacy policy, and Google holds our mailbox under its own terms and
+privacy policy. We require that any third party with whom the app shares user data
+provides the same or equal protection of that data as is stated in this policy.</p>
 
 <h2>9. Analytics and crash reports</h2>
-<p>The main app — <strong>not the keyboard</strong> — sends product analytics through PostHog, and
-crash and error reports, with a short record of each time the app is used, through Sentry. What is sent is event names and counts, such as
-<code>app_opened</code>, <code>full_access_granted</code> and whether a purchase completed, and, from
-Chat, <code>chat_started</code>, <code>chat_reply</code>, <code>chat_refined</code> and
-<code>chat_deleted</code> with how many chats were deleted — counts only, never what you typed or what
-a picture showed. Each is sent with the app version, the device model and operating-system version,
-the device's language and time zone, its screen size, whether it is on Wi-Fi or cellular, and the IP
-address the request came from, and each is tied to the anonymous identifier from section 2,
-so that we can see how one installation uses the app over time without knowing who you are. Sentry
-also receives short diagnostic messages we log ourselves when something goes wrong, such as a failure
-to reach our own server. On its own it keeps a short trail of what happened before a report and
-attaches it to any report it sends: the screens you opened and the buttons you tapped, by their fixed
-names and identifiers, never anything you typed or anything a screen showed; and the web addresses the
-app called recently — ours, RevenueCat's and PostHog's, some of which contain the anonymous
-identifier — with the method, the time, the response code and the size of each. When a server answers
-with a failure (an HTTP 5xx response), it reports that as an error of its own. It also records when
-each session of using the app starts and ends, so that crash rates can be measured. It never records
-what a request or a response contained.</p>
+<p>The main app — <strong>not the keyboard</strong> — sends product analytics through PostHog, and crash
+and error reports, with a short record of each time the app is used, through Sentry. You can turn both
+off with <strong>Share usage data</strong> in Settings; they are then not started at all.</p>
+
+<p><strong>PostHog</strong> receives event names and counts, such as <code>app_opened</code>,
+<code>full_access_granted</code> and whether a purchase completed; from Chat, <code>chat_started</code>,
+<code>chat_reply</code>, <code>chat_refined</code> and <code>chat_deleted</code> with how many chats
+were deleted — counts only, never what you typed or what a picture showed; and, on its own, when the app
+is installed, updated, opened and sent to the background. Each event is sent with the app's name,
+version and build, the device's make, model and type, its operating-system version, language, time
+zone and screen size, whether it is on Wi-Fi or cellular, and the IP address the request came from, and
+each is tied to the anonymous identifier from section 2, so that we can see how one installation uses
+the app over time without knowing who you are. We tell PostHog not to work out a location from the IP
+address.</p>
+
+<p><strong>Sentry</strong> receives crash and error reports: short diagnostic messages we log ourselves
+when something goes wrong, such as a failure to reach our own server, and what the app and device were
+doing — the app version, the device model and architecture, its operating-system version, language,
+time zone and calendar settings, screen size, processor count, memory, thermal state, battery level and
+charging state, orientation and whether it appears to be jailbroken, and when the app was started. On
+its own it keeps a short trail of what happened before a report and attaches it to any report it sends:
+the screens you opened and the buttons you tapped, by their fixed names and identifiers, never anything
+you typed or anything a screen showed; and the web addresses the app called recently — ours,
+RevenueCat's and PostHog's, some of which contain the anonymous identifier — with the method, the time,
+the response code and the size of each. When a server answers with a failure (an HTTP 5xx response), it
+reports that as an error of its own. It also records when each session of using the app starts and
+ends, so that crash rates can be measured. Reports are tied to the anonymous identifier, and Sentry may
+work out an approximate location (such as country, region and city) from the IP address a report came
+from and keep it with the report. We remove the device identifier Sentry would otherwise add. It never
+records what a request or a response contained.</p>
 
 <p><strong>No message content, no picture, no reply text and no draft is ever included</strong>, and
-the keyboard
-extension contains no analytics software at all. Counts of how the keyboard was used — how many times
-it appeared, how much memory it used — are written to the shared container and sent by the app, as
-numbers with no text in them.</p>
+the keyboard extension contains no analytics software at all. Counts of how the keyboard was used — how
+many times it appeared, how much memory it used — are written to the shared container and sent by the
+app, as numbers with no text in them.</p>
 
 <h2>10. Subscriptions</h2>
 <p>Purchases are handled by Apple and managed through RevenueCat, which records what you bought and
-whether it is active. <strong>We never see or receive your payment details</strong> — Apple processes
-payment and does not share your card information with us.</p>
+whether it is active (section 8). <strong>We never see or receive your payment details</strong> — Apple
+processes payment and does not share your card information with us. You manage or cancel a subscription
+through Apple: in the Settings app (your name, then Subscriptions), or with <em>Manage subscription</em>
+in Reply Buddy's Settings, which opens Apple's own page.</p>
 
 <h2>11. Permissions the app asks for</h2>
 <table>
@@ -356,62 +446,108 @@ payment and does not share your card information with us.</p>
   <tr><td>Photos (full access)</td><td>To read your most recent screenshot for the keyboard and
       <em>Reply to a screenshot</em>; and, in Chat, to offer <em>Use latest screenshot</em>, which
       attaches that screenshot to a new chat. It is sent only when you tap Send, and only once you have
-      allowed Chat to send pictures (section 5)</td><td>Setup cannot be finished without it. If you
-      later limit or turn it off, typing and saved replies still work and screenshot reading does not;
-      Chat can still send a picture you pick with the photo picker, which needs no permission</td></tr>
+      allowed Chat to send pictures (section 5)</td><td>You can continue setup without it. Typing and
+      saved replies still work and screenshot reading does not; Chat can still send a picture you pick
+      with the photo picker, which needs no permission</td></tr>
   <tr><td>Keyboard Full Access</td><td>Required by iOS for the keyboard to use the network and read a
-      screenshot</td><td>Setup cannot be finished without it. If you later turn it off, typing and saved
-      replies still work and the keyboard cannot write AI replies; <em>Reply to a screenshot</em> and
-      Chat in the app still can</td></tr>
+      screenshot</td><td>You can continue setup without it. Typing and saved replies still work and the
+      keyboard cannot write AI replies; <em>Reply to a screenshot</em> and Chat in the app still
+      can</td></tr>
+  <tr><td>Share age range (only where the law requires an age check, on iOS 26.2 or later)</td><td>To
+      confirm you are 18 or older (section 15)</td><td>Where the law requires you to share it, Reply
+      Buddy does not open</td></tr>
 </table>
 
 <h2>12. We do not sell or share your personal information</h2>
 <p>We do not sell your personal information, and we have not done so. We do not share it for
-cross-context behavioural advertising, and we have not done so. There is no advertising in Reply
-Buddy and no advertising network receives anything from it. We do not use your message content to
-build a profile of you, to infer anything about you, or for any purpose other than producing the reply
-you asked for.</p>
+cross-context behavioural advertising, use it for targeted advertising, or use it for profiling that
+produces legal or similarly significant effects, and we have not done so. There is no advertising in
+Reply Buddy and no advertising network receives anything from it. We do not use your message content to
+build a profile of you, and we use it for nothing except writing the reply you asked for and keeping
+that reply safe (section 4). Nevada residents may direct us not to sell covered information about them
+by writing to <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>; we do not sell it,
+and we answer within 60 days.</p>
+
+<p><strong>Tracking and &ldquo;Do Not Track&rdquo;.</strong> Reply Buddy does not track you across other
+companies' apps or websites, and it does not let anyone else do so. It shows no ads, does not use
+Apple's advertising identifier and never asks to track you. No other company collects personal
+information about your activity over time and across different apps or websites when you use Reply
+Buddy: PostHog, Sentry and RevenueCat see only how Reply Buddy itself is used, and only on our behalf.
+Because we do no cross-site tracking, there is nothing for a browser's &ldquo;Do Not Track&rdquo;
+signal to switch off; the app has no web views and does not receive one.</p>
 
 <h2>13. Where your information comes from</h2>
 <p>Three sources, and no others: <strong>from you</strong> (the screenshot you choose to capture, the
-picture you choose to send from Chat and what you type there, your draft, your writing samples and
-your settings); <strong>from your device</strong> (the App Attest key; details of the
-device and the app, such as the device model, the operating-system and app versions, language, time
+picture you choose to send from Chat and what you type there, your draft, your writing samples, your
+settings, and anything you email us); <strong>from your device</strong> (the App Attest key; details of
+the device and the app, such as the device model, the operating-system and app versions, language, time
 zone, screen size and whether it is on Wi-Fi or cellular, as described in section 9; and the IP address
 and the app's standard user-agent string that any request carries); and <strong>from Apple and
-RevenueCat</strong> (whether a subscription is active).</p>
+RevenueCat</strong> (whether a subscription is active and, where the law requires, your age range —
+section 15).</p>
 
 <h2>14. Apple's privacy label</h2>
-<p>In the App Store, Reply Buddy declares that <strong>User Content — Photos or Videos, Emails or Text
-Messages, and Other User Content — is collected and not linked to your identity</strong>: the picture
-you send from Chat, the conversation read from a screenshot and your writing samples, and what you
-type. We declare it because Apple defines collection as transmitting data off the device and storing
-it in readable form for longer than it takes to service the request — and our AI provider's thirty-day
-deletion window is longer than that. We would rather over-declare than describe this
+<p>In the App Store, Reply Buddy declares:</p>
+<ul>
+  <li><strong>Data not linked to you:</strong> User Content — Photos or Videos, Emails or Text
+      Messages, and Other User Content: the picture you send from Chat, the conversation read from a
+      screenshot and your writing samples, and what you type. It is not linked because our AI provider,
+      which keeps it, receives no identifier with it (section 7).</li>
+  <li><strong>Data linked to you, through the anonymous identifier:</strong> Identifiers (User ID, and
+      Device ID for the per-install device key and token and PostHog's and Sentry's installation
+      identifiers); Purchases (Purchase History); Usage Data
+      (Product Interaction); Diagnostics (Crash Data, Performance Data and Other Diagnostic Data); and
+      Location (Coarse Location — the approximate location our providers work out from an IP address,
+      sections 6 and 9).</li>
+  <li><strong>No tracking</strong>, in Apple's sense or any other.</li>
+</ul>
+<p>We declare User Content because Apple defines collection as transmitting data off the device and
+storing it in readable form for longer than it takes to service the request — and our AI provider's
+thirty-day deletion window is longer than that. We would rather over-declare than describe this
 inaccurately.</p>
 
-<h2>15. Children</h2>
-<p>Reply Buddy is not directed at children. It is rated for users aged 17 and over and should not be
-used by anyone under 13, or under the minimum age of digital consent where you live. We do not
-knowingly collect information from a child. If you believe a child has used the app and you would like
-what is held against that installation removed, write to us and we will remove it.</p>
+<h2>15. Children and teenagers</h2>
+<p>Reply Buddy is for adults. You must be 18 or older to use it, and it is not directed at children or
+teenagers. We do not knowingly collect personal information from anyone under 18.</p>
+
+<p><strong>Where the law requires an age check</strong> — for example for new Apple Accounts in Texas —
+and your iPhone runs iOS 26.2 or later, where Apple's age-range feature can tell an app that the law
+applies, the app asks Apple, through that feature, whether the account belongs to someone 18 or older.
+It does not open for anyone Apple reports as under 18, nor, where the law requires you to share your age
+range, until you do; if the check cannot finish, or Apple's answer does not show whether you are 18, it
+does not open and offers to try again. An installation that is turned away stops sending anything to our
+AI; typing with the keyboard still works. The app keeps only whether the check passed, on your phone; it
+never sends your age range to us or to anyone else.</p>
+
+<p>If you believe someone under 18 has used the app, write to us — with the anonymous ID from Settings →
+About if you can — and we will delete what our database holds for that installation.</p>
 
 <h2>16. Your rights</h2>
-<p>Because there is no account, most of your data is either on your device, or is an anonymous counter
-and the records listed in section 6. You can delete your chats in the app at any time (section 6), and
-the app's files on your phone by deleting the app; the sign-in in the iOS keychain may outlive it
-(section 6). Neither reaches the copy our AI provider holds: Anthropic deletes it within 30 days of
-each send, or keeps it longer — up to two years if its safety systems flag it, or as long as the law
-requires — and it does not delete early on request (section 7). To stop anything further being sent, turn AI replies off
-(section 5).</p>
+<p><strong>Delete my data.</strong> Settings → About → <strong>Delete my data</strong> deletes your chats,
+your writing samples and the last conversation and reply the keyboard kept, on this phone; deletes the
+anonymous identifier and everything our database holds for it (the table in section 6); and asks our
+analytics provider, PostHog, to delete the analytics tied to it, and our subscription provider,
+RevenueCat, to delete the purchase record it holds for it. It turns AI replies off and signs the app
+out. It does not cancel a subscription — you manage that through Apple (section 10) — and afterwards <em>Restore purchases</em> brings an active subscription back to the app. It
+cannot reach the copy our AI provider holds: Anthropic deletes it within 30 days of each send, or keeps
+it longer — up to two years if its safety systems flag it, or as long as the law requires — and it does
+not delete early on request (section 7). Nor does it reach our hosting provider's own request records
+(section 6), which carry the identifier and your IP address and expire on the schedule Supabase sets, or
+crash reports already sent to Sentry, which expire on the schedule in section 6. You can also delete your chats alone at any
+time (section 6), and the app's files by deleting the app; the sign-in in the iOS keychain may outlive
+it (section 6). To stop anything further being sent, turn AI replies off (section 5).</p>
 
-<p>To ask what is held against your anonymous identifier, or to have it deleted, email
+<p><strong>Other requests.</strong> Wherever you live, you can ask us to tell you whether we hold
+personal information about you and give you a copy of it, to correct it, or to delete it, and you can
+withdraw your consent to AI replies at any time (section 5). Email
 <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>. We will not ask you to create an
-account to make the request. Because the identifier is anonymous, you will need to send it to us so we
-can find the right record — the app shows it under Settings → About. Depending on where you live you
-may have rights of access, correction, deletion and portability, the right to object to or restrict
-processing, the right not to be discriminated against for exercising them, and the right to complain
-to your data protection authority.</p>
+account to make the request. Because the identifier is anonymous, send it with your request so we can
+find the right record — the app shows it under Settings → About. We answer within 45 days, and tell you
+if we need up to 45 more. If we decline to act on a request, you can appeal by replying to our answer
+with &ldquo;Appeal&rdquo;; we decide an appeal within 45 days and tell you how to contact your state's
+attorney general if you disagree. We will not treat you differently for making a request. Depending on
+where you live you may also have rights of portability, to object to or restrict processing, and to
+complain to your data protection authority.</p>
 
 <h2>17. A word about the other person</h2>
 <p>A screenshot of a conversation contains someone else's words as well as your own — and a picture
@@ -425,21 +561,25 @@ reading.</p>
 <p>Our servers and our AI provider operate in the United States, so if you use the app elsewhere your
 message text, and from Chat the picture you send, are processed there. All transmission is encrypted
 in transit (HTTPS/TLS). The conversation stored on your device, and your chats, are written with iOS
-file protection so they are unreadable while your phone is locked. No transmission or storage is ever completely secure, and we cannot promise absolute
-security.</p>
+file protection so they are unreadable while your phone is locked. No transmission or storage is ever
+completely secure, and we cannot promise absolute security.</p>
 
 <h2>19. Changes</h2>
-<p>If this policy changes, the effective date above changes with it, and material changes will be
-signalled in the app. Continuing to use Reply Buddy after a change means you accept the updated
-policy.</p>
+<p>If this policy changes, the effective date above changes with it. For a material change we describe
+it in the release notes of the app update that goes with it and at the top of this page before it takes
+effect. If a change would let us collect a new kind of information, or use or share what we already hold
+in a materially different way, we will ask for your agreement in the app first, and until you give it
+the change will not apply to information collected before it.</p>
 
 <h2>20. Contact</h2>
-<p>Questions, requests or complaints:
-<a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>.</p>
+<p>Questions, requests, reports or complaints:
+<a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>. Our
+<a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a> is a separate page.</p>
 
 <footer>
-  <p class="meta">Reply Buddy: AI Keyboard · <a href="terms.html">Terms of Use</a> · Last updated
-  23 September 2026</p>
+  <p class="meta">Reply Buddy: AI Keyboard · <a href="terms.html">Terms of Use</a> ·
+  <a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a> · Last updated
+  24 September 2026</p>
 </footer>
 
 </div>
