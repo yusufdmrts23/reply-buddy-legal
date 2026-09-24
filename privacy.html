@@ -26,8 +26,8 @@ Where the honest answer is less flattering than the reassuring one, the honest a
   screenshot on your phone and sends only the words, with verification codes masked first; on this path
   the picture is never sent. <strong>The Chat tab</strong> in the app sends the picture itself, with
   whatever is on it and whatever you type, because that is how it reads the conversation — and it asks
-  you first. Our server keeps none of it; our AI provider deletes it within 30 days unless a safety
-  check flags it. Your chats are saved on your phone until you delete them. There is no account and we
+  you first. Our server keeps none of it; our AI provider deletes it within 30 days unless its safety
+  systems flag it. Your chats are saved on your phone until you delete them. There is no account and we
   never ask for your name or email. <strong>No message content of any kind is sent anywhere until you
   switch AI replies on yourself</strong>, and you can switch them off again at any time. You can delete
   your data from Settings; section 16 says exactly what that reaches. Reply Buddy is for adults: you must be 18 or older.</p>
@@ -199,28 +199,46 @@ to a refusal, or your identifier — and none of the answers is used for anythin
 schedule in section 7.</p>
 
 <h3>Sensitive information in what you send</h3>
-<p>A conversation can contain sensitive information — something about a person's health, sex life or
-sexual orientation, religion, finances or immigration status, a crime they suffered, or the fact that
-they are a child. Several US states give that information extra protection, and California counts the
-contents of messages you send or receive (we are not their intended recipient) as sensitive personal
-information. Reply Buddy does not ask for any of it and has no use for it beyond writing the reply
-you asked for and keeping that reply safe (above). We do not sell it, share it for advertising, or build
-a profile from it. The only conclusions drawn from it are the safety checks above: our server uses them
+<p>A conversation can contain sensitive information about you or about the other people in it: their
+racial or ethnic origin, religion, physical or mental health, a disability or treatment, sex life,
+sexual orientation or status as transgender or nonbinary, citizenship or immigration status, a crime
+they suffered, their precise location, a government ID number, a bank or card number with the code
+that opens it, or the fact that they are a child. Several US states treat this as sensitive data, and
+California counts the contents of messages you send or receive (we are not their intended recipient)
+as sensitive personal information. Reply Buddy does not ask for any of it. Whatever of it is in what
+you choose to send is used by us for two purposes only, the two the consent screens name: to write the
+reply you asked for, and to spot risks in it through the safety checks above, such as someone thinking
+about self-harm. Our AI provider also screens everything it receives under its own usage policy,
+including checking pictures against known child sexual abuse material, and keeps what that screening
+flags, and its own safety scores, for longer (section 7). We do not sell it, share it for advertising, or build
+a profile from it. The only conclusions we draw from it are the answers to the safety checks above: our server uses them
 for that one reply and does not store them, and our AI provider keeps them with the rest of the request
-(section 7). You agree to this processing when you turn on AI replies and, for pictures, when you allow
-Chat; you can withdraw that agreement at any time by turning AI replies off (section 5). If a conversation you send mentions health, our
+(section 7). We process sensitive information about you only with your consent: you give it when you
+turn on AI replies and, for pictures, when you allow Chat, and both screens name the kinds of sensitive
+details that what you send can include. You can withdraw it at any time by turning AI replies off
+(section 5), and nothing more is sent from that moment. Sensitive information about the other people in
+a conversation reaches us only inside what you choose to send: we never ask for it, we use it only for
+the reply you asked for and its safety checks, and our server keeps none of it. So send only what the
+reply needs (section 17). If a conversation you send mentions health, our
 <a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a> applies too.</p>
 
 <h2>5. Nothing goes anywhere until you agree, and you can take it back</h2>
 <p>The AI features are off until you explicitly turn them on inside the app. Until you do, no message
-content of any kind is transmitted. You can finish setup without turning them on. For the keyboard this
+content of any kind is transmitted. You can finish setup without turning them on. The screen that asks
+says what goes (your screenshot's words, anything already in the message box and your writing samples),
+that it can include sensitive details about you or others, such as health or sex life, to whom
+(Anthropic's Claude), what for (writing the reply and spotting risks in what is sent, such as
+self-harm — section 4), how long each side keeps it, and how to turn it off. For the keyboard this
 is enforced in three separate places in the code rather than trusted to one.</p>
 
 <p><strong>Chat asks a second time.</strong> Turning on AI replies covers the words the keyboard reads,
 not a picture. So the first time you send a picture from Chat, it asks once more, separately: it tells
-you that the whole picture goes to Anthropic's Claude, the AI that writes the reply, with what you type
-and any writing samples you saved; that our server keeps none of it; that Anthropic deletes it within
-30 days unless a safety check flags it; and that your chats stay on your phone. Nothing is sent unless
+you that the whole picture goes to Anthropic's Claude, the AI that writes the reply and spots risks in
+what you send, such as self-harm, with what you type and any writing samples you saved; that it can
+include sensitive details about you or others, and that if the reply does not need part of the picture
+you can go back, crop it in Photos and attach it again; that our server keeps none of it; that
+Anthropic deletes it within 30 days unless its safety systems flag it; that your chats stay on your
+phone; and how to take it back. Nothing is sent unless
 you choose <strong>Allow</strong>, and the app refuses to send a picture without that answer, whatever
 screen the request comes from. Your answer is stored on your phone.</p>
 
@@ -501,6 +519,11 @@ section 15).</p>
       sections 6 and 9).</li>
   <li><strong>No tracking</strong>, in Apple's sense or any other.</li>
 </ul>
+<p>Sensitive details that appear inside what you send — someone's health, say — are declared as the
+User Content types above, not as separate Health or Sensitive Info types: Apple's guidance says
+developers are &ldquo;not responsible for disclosing all possible data that users may manually enter
+in the app through free-form fields&rdquo;, and the app never asks for any of it (section 4).</p>
+
 <p>We declare User Content because Apple defines collection as transmitting data off the device and
 storing it in readable form for longer than it takes to service the request — and our AI provider's
 thirty-day deletion window is longer than that. We would rather over-declare than describe this
@@ -538,11 +561,18 @@ time (section 6), and the app's files by deleting the app; the sign-in in the iO
 it (section 6). To stop anything further being sent, turn AI replies off (section 5).</p>
 
 <p><strong>Other requests.</strong> Wherever you live, you can ask us to tell you whether we hold
-personal information about you and give you a copy of it, to correct it, or to delete it, and you can
-withdraw your consent to AI replies at any time (section 5). Email
+personal information about you and give you a copy of it, to correct it, to delete it, or to tell you
+which third parties we have sold it to — there are none, because we do not sell it. These rights also
+belong to someone whose messages or photos were in a conversation a Reply Buddy user sent, even if they
+have never used the app. If you use Reply Buddy, you can also withdraw your consent to AI replies at
+any time (section 5). Email
 <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>. We will not ask you to create an
-account to make the request. Because the identifier is anonymous, send it with your request so we can
-find the right record — the app shows it under Settings → About. We answer within 45 days, and tell you
+account to make the request. If you use the app, send the anonymous identifier with your request so
+we can find the right record — the app shows it under Settings → About. If you have never used it, you
+have no identifier and need none: our server keeps no conversations, so it holds nothing we could match
+to you, and what our AI provider still holds is not tied to any identifier from us. We will look in our
+support mailbox for any email that concerns you (tell us what would identify it, such as your name),
+delete what we find if you ask, and tell you the result in writing. We answer within 45 days, and tell you
 if we need up to 45 more. If we decline to act on a request, you can appeal by replying to our answer
 with &ldquo;Appeal&rdquo;; we decide an appeal within 45 days and tell you how to contact your state's
 attorney general if you disagree. We will not treat you differently for making a request. Depending on
@@ -555,7 +585,11 @@ sent from Chat also contains their name, their profile photo and anything else o
 photos they sent you. You decide what to capture and send, and you are responsible for it. Please
 think about whether the other person would object, do not send pictures of other people that they
 would not expect to be shared, and do not use Reply Buddy on conversations you are not meant to be
-reading.</p>
+reading. Take particular care with anything about someone else's health, sex life or other sensitive
+details (section 4): if the reply does not need it, keep it out of what you send. Scroll past it before
+you take the screenshot, or, in Chat, crop the picture in Photos before you attach it. Once the keyboard
+has read a screenshot, editing it in Photos does not change the words it sends, so take a new
+screenshot instead.</p>
 
 <h2>18. Data transfers and security</h2>
 <p>Our servers and our AI provider operate in the United States, so if you use the app elsewhere your
