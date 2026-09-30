@@ -12,8 +12,20 @@
 
 <header>
   <h1>Privacy Policy</h1>
-  <p class="meta">Reply Buddy: AI Keyboard · Effective 28 September 2026</p>
+  <p class="meta">Reply Buddy: AI Keyboard · Effective 30 September 2026</p>
 </header>
+
+<div class="note">
+  <p><strong>What changed on 30 September 2026.</strong> Reply Buddy now measures its own ads. Only if you
+  allow tracking when iOS asks, and leave <strong>Share usage data</strong> on, the app tells Meta when it
+  is installed or opened, when you finish setup and when you start a trial or subscribe. Meta can use these
+  to measure our ads and deliver them better and, outside the states where it applies Limited Data Use, to
+  personalise the ads and other content it shows you. For everyone with Share usage data on, the app also
+  uses Apple's own ad measurement, which carries no identifier. Nothing from
+  your conversations goes to either. Section 9A has the detail, and section 12 what it means under state
+  privacy laws and <a href="#opt-out">how to opt out</a>. This policy also now says what happens to your
+  information if Reply Buddy changes hands (section 8).</p>
+</div>
 
 <p>Reply Buddy helps you write replies to messages. <strong>The replies are written by AI</strong> —
 Anthropic's Claude — not by a person. This policy explains exactly what the app does with your
@@ -29,8 +41,15 @@ Where the honest answer is less flattering than the reassuring one, the honest a
   you first. Our server keeps none of it; our AI provider deletes it within 30 days unless its safety
   systems flag it. Your chats are saved on your phone until you delete them. There is no account and we
   never ask for your name or email. <strong>No message content of any kind is sent anywhere until you
-  switch AI replies on yourself</strong>, and you can switch them off again at any time. You can delete
-  your data from Settings; section 16 says exactly what that reaches. Reply Buddy is for adults: you must be 18 or older.</p>
+  switch AI replies on yourself</strong>, and you can switch them off again at any time. Reply Buddy shows
+  no ads. If you allow tracking when iOS asks, and leave <strong>Share usage data</strong> on,
+  the app tells Meta when it is installed or opened, when you finish setup and when you start a trial or
+  subscribe, so that we can see which of our ads work and Meta can deliver them better — and, in the
+  states where Meta does not apply Limited Data Use, Meta may also use them to personalise the ads and
+  other content it shows you; if you don't, the app sends Meta nothing, and
+  nothing else in the app changes. Nothing from your conversations ever goes to Meta (section 9A). You
+  can delete your data from Settings; section 16 says exactly what that reaches. Reply Buddy is for
+  adults: you must be 18 or older.</p>
 </div>
 
 <h2>1. Who we are</h2>
@@ -59,11 +78,25 @@ imply there is nothing:</p>
       store only a hash of it, and it stops working after 90 days.</li>
   <li>Our analytics provider, PostHog, and our crash reporter, Sentry, each create their own random
       identifier for the installation, alongside ours.</li>
+  <li>Apple's <strong>identifier for vendor</strong>, a random identifier that iOS gives, with the same
+      value, to every app from the same developer on your device. Reply Buddy's own code does not read
+      it, but the software of our subscription provider, RevenueCat, sends it to RevenueCat with every
+      request it makes (section 8). It is not the advertising identifier and needs no permission. iOS
+      keeps it while any app of ours is on the device, and gives a new one only after all of them have
+      been deleted.</li>
+  <li>Only if you allow tracking (section 9A): Apple's <strong>advertising identifier</strong>, which iOS
+      gives an app only after you choose Allow, and a random identifier that <strong>Meta's
+      software</strong> creates for the installation. Only Meta's software reads them, and neither is sent
+      to our server, PostHog, Sentry or RevenueCat. The advertising identifier belongs to your device, not
+      to the app, so deleting the app does not change it; iOS lets you stop apps using it (section 9A).</li>
 </ul>
 
-<p>None of these contains your name or contact details. Deleting the app removes them from your phone;
-our server's records stay until you delete them from Settings or ask us to (section 16), because our
-server cannot tell when the app is deleted.</p>
+<p>None of these contains your name or contact details. Deleting the app removes them from your phone,
+apart from the advertising identifier and the identifier for vendor, which iOS keeps (the second only
+while another app of ours remains installed), and the sign-in that carries the anonymous identifier,
+which the iOS keychain may keep so that a reinstall comes back as the same identifier (section 6); our
+server's records stay until you delete them from
+Settings or ask us to (section 16), because our server cannot tell when the app is deleted.</p>
 
 <h2>3. Screenshots: two paths, and what each one sends</h2>
 <p>Reply Buddy works by reading a screenshot of a conversation, and there are two ways it does that.
@@ -94,8 +127,10 @@ say what you want to say, and the AI reads the picture itself.</p>
   <li><strong>You choose the picture.</strong> You attach it with the iOS photo picker, which runs
       outside the app and gives Reply Buddy only the picture you pick; it can be any picture, not only
       a screenshot. If you gave Reply Buddy full Photos access, <em>Use latest screenshot</em> attaches
-      your single newest screenshot instead. To offer that button, the Chat list looks up when your
-      newest screenshot was taken; it opens the picture only when you tap it.</li>
+      your single newest screenshot instead; inside a chat, it adds your newest screenshot when it is
+      newer than the one the chat has. To offer that button, the Chat list and each open chat look up
+      when your newest screenshot was taken, and the list shows a small preview of it, all on your
+      phone. Nothing is sent until you tap Send.</li>
   <li><strong>The whole picture is sent, uncropped and unfiltered.</strong> That includes the status
       bar, the other person's name and profile photo at the top, and any codes, numbers, faces or
       photos on it. Nothing is masked. If a screenshot shows something you would not want to share,
@@ -104,8 +139,12 @@ say what you want to say, and the AI reads the picture itself.</p>
       side and saved as a new JPEG, which removes anything stored inside the original file, such as
       its location, date and camera details.</li>
   <li><strong>It is read by our AI provider</strong>, Anthropic's Claude, not on your phone.</li>
-  <li><strong>It is sent again with every change you ask for</strong>, together with the chat so far,
-      because our server keeps nothing between requests.</li>
+  <li><strong>It is sent again with every change you ask for</strong>, together with what was said
+      about it so far, because our server keeps none of your words, pictures or replies between
+      requests.</li>
+  <li><strong>You can add a newer picture to the same chat</strong> when the conversation moves on.
+      From then on, each send carries only the newest picture and what was said since you added it;
+      the earlier pictures stay in the chat on your phone and are not sent again.</li>
   <li><strong>A send you started keeps going for up to about thirty seconds</strong> if you switch to
       another app, so the reply is there when you come back. Nothing starts while the app is
       closed.</li>
@@ -166,13 +205,13 @@ the last two rows, on to our AI provider:</p>
 
 <table>
   <tr><th>Sent</th><th>Detail</th></tr>
-  <tr><td>The picture</td><td>The picture you attached, as described in section 3 — whole, re-saved at
-      no more than 1,568 pixels, with nothing masked. Sent again with every request in the same
-      chat</td></tr>
+  <tr><td>The picture</td><td>The chat's newest picture, as described in section 3 — whole, re-saved
+      at no more than 1,568 pixels, with nothing masked. Sent again with every request until you add a
+      newer one; earlier pictures are not sent again</td></tr>
   <tr><td>What you type</td><td>Your instruction for this reply, up to 1,000 characters. It can be
-      empty the first time, when the picture alone asks for a reply</td></tr>
-  <tr><td>The chat so far</td><td>Each earlier instruction in this chat that got a reply, with the
-      reply you were shown — at most ten — so a change builds on what came before</td></tr>
+      empty for the first reply to each picture, when the picture alone asks for a reply</td></tr>
+  <tr><td>The chat so far</td><td>Each earlier instruction about the newest picture that got a reply,
+      with the reply you were shown — at most ten — so a change builds on what came before</td></tr>
   <tr><td>Your writing samples</td><td>As above, only if you saved any</td></tr>
   <tr><td>Settings</td><td>The chat's mode (everyday, dating, work)</td></tr>
   <tr><td>Anonymous identifier</td><td>To check your subscription status and your daily count, which
@@ -188,8 +227,10 @@ own.</p>
 
 <h3>Safety checks, in the same request</h3>
 <p>While it writes a reply, the AI also answers a few questions about what it was sent, so that a reply
-can be held back or changed when it would put someone at risk: whether the conversation involves
-someone thinking about harming themselves (so that the app never refuses to help then); in Chat,
+can be held back or changed when it would put someone at risk: in Chat, whether the conversation
+involves someone thinking about harming themselves (so that the app never refuses to help then) — from
+the keyboard and <em>Reply to a screenshot</em> the AI is told how to answer such a message but writes
+no answer about it; in Chat,
 whether someone is asking for an intimate picture and what your instruction asks for (so that a small
 set of harmful requests is refused); and whether someone in a romantic conversation has said they are
 under 18 (so that no reply is written for it). These answers are processed automatically, only for the
@@ -225,10 +266,10 @@ reply needs (section 17). If a conversation you send mentions health, our
 <h2>5. Nothing goes anywhere until you agree, and you can take it back</h2>
 <p>The AI features are off until you explicitly turn them on inside the app. Until you do, no message
 content of any kind is transmitted. You can finish setup without turning them on. The screen that asks
-says what goes (your screenshot's words, your draft and your writing samples),
-that it can include sensitive details about you or others, such as health or sex life, to whom
-(Anthropic's Claude), what for (writing the reply and spotting risks in what is sent, such as
-self-harm — section 4), how long each side keeps it, and how to turn it off. For the keyboard this
+says what goes (your screenshot's words and your draft; any writing samples you save are named where
+you save them), that it can include sensitive details about you or others, such as health or sex
+life, to whom (Anthropic's Claude), what for (writing the reply and spotting risks in what is sent,
+such as self-harm — section 4), how long Anthropic keeps it, and how to turn it off. For the keyboard this
 is enforced in three separate places in the code rather than trusted to one.</p>
 
 <p><strong>Chat asks a second time.</strong> Turning on AI replies covers the words the keyboard reads,
@@ -252,7 +293,10 @@ them (section 6), and for what is held elsewhere, see section 16.</p>
 <p>To be straight with you about what else happens: the app itself does talk to the network when you
 open it, before you have consented to anything, in order to create the anonymous identifier, check
 your subscription, and — unless you turn <strong>Share usage data</strong> off in Settings — send the
-analytics and crash reporting described in section 9. None of that carries message content.</p>
+analytics and crash reporting described in section 9 and, only if you also chose Allow when iOS asked
+whether Reply Buddy may track you, send Meta the events described in section 9A. With Share usage data
+on, the app also gives iOS, on your phone, the number for Apple's ad measurement described in section 9A.
+None of that carries message content.</p>
 
 <h2>6. What we keep, and for how long</h2>
 
@@ -274,25 +318,30 @@ database keeps is listed here:</p>
   <tr><td>Daily reply count, and the token totals we use to monitor cost</td><td>The fair-use limit,
       which the keyboard and Chat share, and knowing what the service costs to run</td><td>One row per
       day, kept until you delete the identifier</td></tr>
-  <tr><td>Subscription status and expiry</td><td>To know whether Pro is active</td><td>For the life of
-      the subscription and the period we may need it for billing and refund questions, or until you
-      delete it (section 16)</td></tr>
+  <tr><td>Subscription status and expiry</td><td>To know whether Pro is active</td><td>Until you delete
+      the identifier (section 16). A record left under an identifier that no longer exists is deleted
+      by a daily job</td></tr>
   <tr><td>Device key, its counter and when it was last used; device-token hash, with when it was issued
       and last used</td><td>To tell a real installation from a script (section 2)</td><td>Until you
       delete the identifier — our server cannot tell when the app is deleted. The token stops working
       after 90 days</td></tr>
+  <tr><td>A one-time random challenge, with when it was issued and when it expires</td><td>So that an
+      App Attest proof cannot be used twice (section 2)</td><td>Valid for 10 minutes; deleted when it is
+      used, an unused one some time after it expires, and with the identifier</td></tr>
   <tr><td>Whether this installation used the one free sample reply that setup offered before 15
       September 2026</td><td>So it was offered once</td><td>Until you delete the identifier</td></tr>
   <tr><td>One row per request recording whether the device evidence checked out</td><td>To see whether
       the protection is working before it is ever used to refuse anything</td><td><strong>7 days.</strong>
       A scheduled job deletes them every night</td></tr>
-  <tr><td>A log line for each request: counts, timings and yes/no outcomes, such as how many lines were
-      read, how large a picture was, and whether a reply was refused or held back. Never your words,
-      the picture, a reply or your identifier</td><td>To find faults and see what the service
+  <tr><td>A log line for each request: the mode, counts, timings and outcomes, such as how many lines
+      were read, how large a picture was and its file type, whether writing samples were sent, and
+      whether a reply was refused or held back; and, when a request
+      fails, the error message it failed with, with any web address taken out. Never your words, the
+      picture, a reply or your identifier</td><td>To find faults and see what the service
       costs</td><td>For the period our hosting provider sets for logs</td></tr>
 </table>
 
-<p>Each of the first seven rows is tied to the anonymous identifier, and none of the rows contains
+<p>Each of the first eight rows is tied to the anonymous identifier, and none of the rows contains
 anything you wrote or sent.</p>
 
 <p><strong>Our hosting provider's own records.</strong> Every request to our server, like every request
@@ -308,11 +357,15 @@ anonymous identifier. Our own log lines do not record your IP address.</p>
   <tr><td>Anthropic</td><td>What was sent to write a reply, and the reply</td><td>Section 7: within 30
       days, longer if flagged or where the law requires</td></tr>
   <tr><td>PostHog</td><td>The analytics events in section 9</td><td>For the retention period PostHog
-      sets for our plan, or until you use <em>Delete my data</em> (section 16)</td></tr>
+      sets for our plan, or until you use <em>Delete my data</em> (section 16, which explains what it can
+      miss)</td></tr>
   <tr><td>Sentry</td><td>Crash and error reports and session records (section 9)</td><td>Up to 90
       days</td></tr>
   <tr><td>RevenueCat</td><td>Your purchase record (section 10)</td><td>Until you delete it with
       <em>Delete my data</em>, or for as long as the subscription record is needed</td></tr>
+  <tr><td>Meta</td><td>The ad-measurement events in section 9A, only if you allowed tracking</td><td>For
+      as long as Meta's own policy allows. We cannot delete them, and <em>Delete my data</em> does not
+      reach them (section 16)</td></tr>
 </table>
 
 <h3>On your phone</h3>
@@ -322,8 +375,10 @@ recent screen capture, the reply you were last given, your saved writing samples
 record of whether Pro is active, and the device key and token from section 2.</p>
 
 <p>The conversation and the capture are <strong>overwritten each time you capture a new one</strong> —
-the keyboard keeps no history and no earlier conversation. Deleting the app removes the container and
-everything in it.</p>
+the keyboard keeps no history and no earlier conversation. The conversation, the capture and the replies
+are <strong>excluded from iCloud and device backups</strong>; your writing samples and settings are
+not, so that they can follow you to a new phone. Deleting the app
+removes the container and everything in it.</p>
 
 <p>Separately, the sign-in that carries the anonymous identifier from section 2 — the identifier and
 the tokens that renew it, no content — is kept in the iOS keychain, so the keyboard can use it too.
@@ -331,11 +386,22 @@ iOS may keep keychain items after an app is deleted, so a reinstall can come bac
 identifier. <em>Delete my data</em> (section 16) signs it out.</p>
 
 <p>The app also keeps a few settings of its own: whether you share usage data, and, where the law
-requires an age check, whether it passed (section 15).</p>
+requires an age check, whether it passed (section 15). For ad measurement (section 9A) it keeps which of
+the moments it counts it has already counted, so that each is counted once; the price and currency of a
+free trial started on this phone, and when that subscription began, so that its first payment can be
+recognised and counted; and the furthest point it has given Apple's ad measurement, so that it never
+gives a lower one. Your answer to the tracking question is kept by iOS, not by the app; RevenueCat also
+records it (section 8).</p>
+
+<p>If Meta's software has run, it keeps its own files and settings in the app's storage: its identifier
+for the installation, events waiting to be sent, and a record of how long the app was used. The app
+erases them the next time it is launched after Meta's software was stopped or while it may not run
+(section 9A), and after <em>Delete my data</em> (section 16), apart from the record that Meta's software
+reported the installation, which is kept so that Meta is not told of a second one.</p>
 
 <p><strong>Chat keeps a history, and it is yours to delete.</strong> Chats are saved in the app's own
 private storage — not the shared container, so the keyboard cannot read them. For each chat that
-means the picture as it was sent, what you typed, the replies and what the chat showed beside them
+means each picture as it was sent, what you typed, the replies and what the chat showed beside them
 (the messages it took each reply to answer, any note or refusal), an instruction still waiting to be
 sent, the mode and the dates. Separately, the app records when you allowed Chat to send pictures;
 deleting chats does not remove that record, and turning AI replies off does. Chats stay until you
@@ -376,13 +442,21 @@ reassuring, because the distinction matters:</p>
 </ul>
 
 <p>This applies to a picture sent from Chat exactly as it does to text: a picture is an input like any
-other. Each send is a new input — asking for a change, or continuing a chat later, sends the picture
-again, and that copy is deleted on its own schedule. Anthropic does not offer early deletion of
-individual requests, so deleting a chat on your phone, or using <em>Delete my data</em>, does not delete
-Anthropic's copy, and we cannot ask for that on your behalf; it is deleted on Anthropic's schedule
-above.</p>
+other. Each send is a new input — asking for a change, or continuing a chat later, sends the chat's
+newest picture again, and that copy is deleted on its own schedule. Deleting a chat on your phone, or
+using <em>Delete my data</em>, does not delete Anthropic's copy, and Anthropic offers no published way to
+delete an individual request early. If you email us a request to delete your data (section 16), we pass
+it on to Anthropic, which has agreed to help us answer such requests (and to Supabase, section 16). But
+nothing we send Anthropic carries an identifier that says which installation it came from — though what
+was sent, a picture especially, may show your name or photo — and we keep no record that ties
+Anthropic's reference for a successful request to you. For a request that failed, the error message can
+include Anthropic's reference, and our hosting provider's logs keep it for the period they are kept,
+beside the provider's own record of the same request, which carries your identifier (section 6).
+Otherwise Anthropic may not be able to find what you sent; anything it does not delete on request is
+deleted on its schedule above.</p>
 
-<p>So &ldquo;we do not store your messages&rdquo; is true of us, and thirty days is not zero. We will
+<p>So &ldquo;we do not store your messages&rdquo; is true of us, and thirty days — longer if Anthropic's
+safety systems flag something — is not zero. We will
 not claim your conversations vanish the instant they are used, because that would not be accurate.</p>
 
 <h2>8. The other companies involved</h2>
@@ -397,27 +471,54 @@ not claim your conversations vanish the instant they are used, because that woul
   <tr><td>Anthropic</td><td>Generates the replies, from text or, in Chat, from the picture, as
       described in section 7</td></tr>
   <tr><td>Apple</td><td>Processes payment, and provides the on-device text recognition, the photo
-      picker, App Attest and, where the law requires, your age range (section 15)</td></tr>
-  <tr><td>RevenueCat</td><td>Records what you bought and whether it is still active, the app and iOS
-      version, when the app was first and last seen, and a country — from your purchase, or worked
-      out from your IP address, which RevenueCat does not keep</td></tr>
+      picker, App Attest, its own ad measurement (section 9A) and, where the law requires, your age range
+      (section 15)</td></tr>
+  <tr><td>RevenueCat</td><td>Receives with each request the app and iOS version, the device model, your
+      preferred languages, your App Store country and Apple's identifier for vendor (section 2). Records
+      what you bought and whether it is still active, the app and iOS version, when the app was first and
+      last seen, and a country — from your purchase, or worked out from your IP address, which RevenueCat
+      does not keep — and whether you allowed tracking, which RevenueCat's software reads from iOS and
+      records with your purchase record (your answer only, never the advertising identifier). When our own
+      record says Pro is not active, our server also asks RevenueCat, with the anonymous identifier,
+      whether it is, before refusing a reply. Our server uses the answer only to decide whether to write replies,
+      and relies on it for no more than a minute so that repeated taps do not each ask again. It holds the
+      answer only in the memory of the server process that asked, at most until that process ends, and
+      never writes it to our database</td></tr>
   <tr><td>PostHog</td><td>Product analytics for the app, described in section 9</td></tr>
   <tr><td>Sentry</td><td>Crash and error reports for the app, and a record of each app session,
       described in section 9</td></tr>
+  <tr><td>Meta</td><td>Only if you allowed tracking, and only while Share usage data is on: the
+      ad-measurement events described in section 9A, with the identifiers and device details listed there
+      — never anything from your conversations. Whatever you answer to the tracking question, if you
+      installed Reply Buddy from one of our ads and Share usage data was on, Meta may also receive from
+      Apple the anonymous install report described in section 9A</td></tr>
   <tr><td>Google (Gmail)</td><td>Our support mailbox: any email you send us — a question, a data
       request, a report of a reply — with your email address and whatever it contains (section 6)</td></tr>
 </table>
 
 <p>Supabase, Anthropic, RevenueCat, PostHog and Sentry each process this data for us, as our service
-provider, under terms that limit it to providing its service to us. Apple handles payment, App Attest
-and the age range under its own privacy policy, and Google holds our mailbox under its own terms and
-privacy policy. We require that any third party with whom the app shares user data
-provides the same or equal protection of that data as is stated in this policy.</p>
+provider, under terms that limit it to providing its service to us. Meta handles the events in section 9A
+as our service provider or processor in the states where its Limited Data Use applies; elsewhere it
+handles them under its Business Tools Terms, which also let Meta use them for its own purposes, as
+section 9A explains. We require each company that processes user data for us — Supabase, Anthropic,
+RevenueCat, PostHog, Sentry and, only when you have allowed tracking and Share usage data is on, Meta — to
+give it the same or equal protection as this policy states, and each is bound to do so by its terms with
+us: for Meta, its Business Tools Terms and, in the states where Limited Data Use applies, its
+State-Specific Terms. For what Meta receives, the protection this policy states is the one described in
+section 9A, including the uses Meta may make of it for itself outside those states. Apple, which the app
+also uses for payment, App Attest, its ad measurement and the age range, handles what it receives under
+its own privacy policy. The app sends Google nothing: an email you choose to send us reaches our Gmail
+mailbox, which Google holds under its own terms and privacy policy, not as our processor.</p>
+
+<p>If Reply Buddy is transferred to a company we control or to a new owner, the information we hold
+(section 6) goes with it. The new owner must keep to this policy for that information, and section 19
+applies to any change they want to make.</p>
 
 <h2>9. Analytics and crash reports</h2>
 <p>The main app — <strong>not the keyboard</strong> — sends product analytics through PostHog, and crash
 and error reports, with a short record of each time the app is used, through Sentry. You can turn both
-off with <strong>Share usage data</strong> in Settings; they are then not started at all.</p>
+off with <strong>Share usage data</strong> in Settings; they are then not started at all. The same switch
+also stops Meta's ad measurement and the app's use of Apple's (section 9A).</p>
 
 <p><strong>PostHog</strong> receives event names and counts, such as <code>app_opened</code>,
 <code>full_access_granted</code> and whether a purchase completed; from Chat, <code>chat_started</code>,
@@ -438,32 +539,185 @@ charging state, orientation and whether it appears to be jailbroken, and when th
 its own it keeps a short trail of what happened before a report and attaches it to any report it sends:
 the screens you opened and the buttons you tapped, by their fixed names and identifiers, never anything
 you typed or anything a screen showed; and the web addresses the app called recently — ours,
-RevenueCat's and PostHog's, some of which contain the anonymous identifier — with the method, the time,
-the response code and the size of each. When a server answers with a failure (an HTTP 5xx response), it
+RevenueCat's and PostHog's, some of which contain the anonymous identifier, and Meta's if its software
+has run in that session (section 9A) — with the method, the time, the response code and the size of
+each.When a server answers with a failure (an HTTP 5xx response), it
 reports that as an error of its own. It also records when each session of using the app starts and
 ends, so that crash rates can be measured. Reports are tied to the anonymous identifier, and Sentry may
 work out an approximate location (such as country, region and city) from the IP address a report came
 from and keep it with the report. We remove the device identifier Sentry would otherwise add. It never
 records what a request or a response contained.</p>
 
-<p><strong>No message content, no picture, no reply text and no draft is ever included</strong>, and
-the keyboard extension contains no analytics software at all. Counts of how the keyboard was used — how
-many times it appeared, how much memory it used — are written to the shared container and sent by the
-app, as numbers with no text in them.</p>
+<p><strong>No message content, no picture, no reply text and no draft is ever included</strong> in
+analytics, in crash reports or in anything sent to Meta, and the keyboard extension contains no analytics
+or advertising software at all. Counts of how the keyboard was used — such as how many replies it
+wrote and how many you inserted, how many screenshots it read or could not read, and how often it needed
+Full Access or AI replies turned on — are written to the shared container and sent by the app, as
+numbers with no text in them.</p>
+
+<h2>9A. Measuring our ads (Meta)</h2>
+<p>We advertise Reply Buddy through Meta — on Facebook and Instagram, for example — and want to know which
+of those ads lead to installs, trials and subscriptions. For that, the main app — <strong>not the
+keyboard</strong> — contains Meta's software development kit (&ldquo;Meta's software&rdquo; below). This
+section says when it runs, what it sends, what it never sends, and how to stop it.</p>
+
+<h3>When it runs</h3>
+<p>Only when all three of these are true. The app checks them when it starts, when you answer the
+tracking question, when you change Share usage data, and each time you return to the app, before Meta's
+software can send anything it was holding; until they are all true, Meta's software is not even
+started:</p>
+<ul>
+  <li>You passed the age check, where the law requires one (section 15).</li>
+  <li>You chose <strong>Allow</strong> when iOS asked whether Reply Buddy may track your activity across
+      other companies' apps and websites. iOS asks once, during setup: normally as you leave the step
+      about AI replies, before the subscription screen appears; otherwise, such as when setup is reopened
+      on the subscription screen, on that screen. The app shows a blank screen behind the question, and no screen of ours
+      comes before it. While iOS has not asked, you can ask for it yourself from Settings → Privacy &amp;
+      data → Tracking, which is also where it is asked if you finished setup before Reply Buddy began
+      measuring its ads (or when you run setup again). If iOS cannot ask — for example because &ldquo;Allow Apps to Request to
+      Track&rdquo; is off on your iPhone — the answer counts as no.</li>
+  <li><strong>Share usage data</strong> is on in Settings → Privacy &amp; data (section 9). While it is
+      off, the app does not ask the tracking question at all, and Meta's software does not run whatever
+      you answered before.</li>
+</ul>
+<p>Otherwise Meta's software is not started — or, if it was already running, it is stopped as described
+under &ldquo;Changing your mind&rdquo; — and sends Meta none of the events below. Nothing in Reply
+Buddy depends on your answer: the features, the prices and the free trial are the same either way, and we
+do not treat you differently for declining. Apart from the installation itself — which Meta's software
+reports the first time it runs, even if that is some time after you installed the app, and never a
+second time on the same installation — something that happens while Meta's software is not running is
+not sent to Meta later, even if you allow tracking afterwards.</p>
+
+<h3>What Meta receives</h3>
+<ul>
+  <li><strong>That the app was installed or opened.</strong> When Meta's software starts, and each time
+      you return to the app after that, the app tells it that the app is open. From this it records that
+      the app is installed — once, the first time it runs — and your visits to the app: when the app has been away for a while, a new
+      visit, with how long the previous visit lasted, how often it was briefly left and how long the app
+      was away.</li>
+  <li><strong>That you finished setup</strong>.</li>
+  <li><strong>That you started a free trial</strong> on this installation, with the plan's price and
+      currency.</li>
+  <li><strong>That this installation made its first payment</strong>: straight away when you buy a plan without
+      a trial, with its price and currency; or, when a free trial started on this phone turns into a paid
+      subscription, the next time the app is open after that, with the price and currency of the plan the
+      subscription is then on, or of the trial's plan if the app cannot tell — sent if Meta's software is
+      running when the app sees the payment, even if the trial began while it was not. Renewals, restored
+      purchases and buying a plan your Apple Account already has are not sent.</li>
+</ul>
+<p>Each of the last three is sent at most once on this installation until you use <em>Delete my
+data</em>, which resets all three (section 16).</p>
+<p>Meta's software adds details of its own to each of them: Apple's advertising identifier, and the fact
+that you allowed tracking; its own identifier for the installation; the app's bundle identifier, version
+and build, and link scheme; the device model, iOS version, language, time zone, screen size, number of
+processor cores and mobile carrier, where iOS provides one; the time, and a random ID for the visit; and
+the internal name of the kind of screen that was showing, which is a name from the app's code, not
+anything shown on it. Meta also sees the IP address each request comes from, and works out from it
+roughly where you are, which is how it decides whether Limited Data Use applies (below).</p>
+
+<p><strong>Meta never receives</strong> anything from your conversations: no screenshot, picture, text,
+draft, reply, writing sample or instruction, and nothing from Chat or the keyboard. It never receives the
+mode you use, the answers to the safety checks (section 4), your age range or the anonymous identifier
+from section 2, and the app gives it no name, email address or phone number — it never asks you for
+them. We give Meta's software no identifier of ours, so we do not tie what Meta receives to your record in
+our database, in PostHog or in Sentry.</p>
+
+<p><strong>What we switch off.</strong> Meta's software can do more than this on its own. On the phone
+itself, where no setting on Meta's side can switch them back on, we switch off: its features that read the app's buttons, lists and text fields (&ldquo;codeless&rdquo; events,
+automatic advanced matching and suggested events); its on-device models, including its
+&ldquo;integrity&rdquo; and privacy-protection models, so that none is downloaded or run; its sending of
+the same events to a second destination (Meta's &ldquo;Cloudbridge&rdquo;); its own reports to Apple's
+ad measurement; Meta's &ldquo;Aggregated Event Measurement&rdquo; and its automatic setup; its automatic
+logging of purchases made through Apple's current purchase system; a separate report of your tracking
+choice; and its own crash and error reports.</p>
+
+<p>Its <strong>automatic logging</strong> of events — which would include purchases made through Apple's
+older purchase system — is switched off in the app, and also in the settings Meta keeps for our app,
+because Meta's servers could otherwise turn it back on over the app's own setting. If the app ever finds
+that they have, it stops passing anything to Meta's software and holds back the events it has queued,
+which the next launch erases; the settings Meta keeps for our app, not this check, are what keep
+automatic logging off.</p>
+
+<h3>What Meta does with it</h3>
+<p>Meta matches the events with the ads it showed, and with what it knows about you from other apps and
+websites, so that it can tell us how many installs, trials and subscriptions each of our ads led to. We
+see the results as totals in Meta's reports, never as information about you. Meta can also use them to
+target and deliver ads: to improve how it delivers ours and, outside the states listed below, to choose
+the ads and other content it shows you. That does not depend on what our campaigns are set to optimise
+for.</p>
+
+<p><strong>Limited Data Use.</strong> The app turns on Meta's Limited Data Use setting with every event,
+and lets Meta work out your state from your IP address. In the US states where Meta applies it — at the
+time of writing California, Colorado, Connecticut, Delaware, Florida, Maryland, Minnesota, Montana,
+Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island and Texas — Meta has agreed to handle the events
+only as our service provider or processor, and not to sell or share them. In other states, and outside the
+United States, the setting has no effect: Meta's
+<a href="https://www.facebook.com/legal/businesstech">Business Tools Terms</a> then also let it use the
+events for its own purposes, such as personalising the ads and content it shows, under
+<a href="https://www.facebook.com/privacy/policy/">Meta's Privacy Policy</a>. Meta lists the states on its
+<a href="https://developers.facebook.com/docs/marketing-apis/data-processing-options/">page about Limited
+Data Use</a>.</p>
+
+<h3>Apple's own ad measurement, whatever your answer</h3>
+<p>Separately from Meta's software, and whatever you answer to the tracking question, the app uses Apple's
+own ad measurement: SKAdNetwork and, on iOS 17.4 or later, AdAttributionKit. The app gives iOS a single
+number (with Apple's matching low, medium or high level) for how far this installation has got — 0 once the app has been opened, 1 when a free trial
+starts, 2 at the first payment — and never lowers it. Giving iOS the number happens on your phone; the
+app itself sends nothing for this. If you installed Reply Buddy from an ad, iOS — not the app — may later
+tell the ad network that showed it (Meta, for our ads) that the ad led to an install,
+with that number, after a delay of a day or more and without any identifier for you or your device; Apple
+includes less detail when few installs are counted. If the install did not come from an ad, iOS sends
+nothing. Apple does not require your permission to track for this, but the app does it only after the age
+check, where the law requires one, and only while Share usage data is on. <em>Delete my data</em> leaves
+the number already given in place: it belongs to this installation's report to Apple and identifies no
+one.</p>
+
+<h3>Changing your mind</h3>
+<ul>
+  <li><strong>In iOS:</strong> Settings → Privacy &amp; Security → Tracking, where you can turn tracking
+      off for Reply Buddy, or stop every app from asking. In Reply Buddy, Settings → Privacy &amp; data →
+      Tracking shows your current answer; while iOS has not asked, it asks, and once you have answered it
+      opens Reply Buddy's page in the Settings app, where the same switch is (with Share usage data off,
+      the row only says that tracking is off with it). When you leave Reply Buddy,
+      the app pauses what Meta's software sends; when you return, it reads your answer again before
+      anything held back can be sent, and if you have switched tracking off, Meta's software stops then
+      and sends nothing more.</li>
+  <li><strong>In Reply Buddy:</strong> turn <strong>Share usage data</strong> off in Settings → Privacy
+      &amp; data. Meta's software stops at once, and the app stops giving Apple's ad measurement new
+      numbers.</li>
+</ul>
+<p>Once Meta's software stops, none of the events above is sent to Meta, and it stays stopped until the
+app is next launched, even if you turn tracking or Share usage data back on in the meantime: that takes
+effect at the next launch. Events it had not yet sent are held back on the phone and never sent.
+Meta's software cannot be unloaded while the app is open, so until the app is closed it may still fetch
+its own settings from Meta's servers; that sends none of the events above. The next time the app is
+launched (not just brought back from the background), before Meta's software could start, the app
+erases what it kept on your phone — its identifier for the installation, the held-back events and the
+time it went on counting while stopped — apart from the record that it reported the installation
+(section 6). If by then you have turned tracking and Share usage data back on, it starts again afresh,
+with a new identifier for the installation; Apple's advertising identifier, which belongs to the device,
+stays the same. What Meta has already received stays with Meta, under its own policy: we
+cannot delete it, and <em>Delete my data</em> does not reach it (section 16). In Meta's Accounts Center
+(in the Facebook or Instagram app), the setting <em>Activity from other businesses</em> lets you choose
+whether Meta uses the activity that businesses such as us send it to personalise the ads and other content
+it shows you. It changes how Meta uses that information, not whether Meta receives or keeps it; to stop
+Reply Buddy sending anything to Meta, use the choices above.
+<a href="https://www.facebook.com/privacy/policy/">Meta's Privacy Policy</a> explains more.</p>
 
 <h2>10. Subscriptions</h2>
 <p>Purchases are handled by Apple and managed through RevenueCat, which records what you bought and
 whether it is active (section 8). <strong>We never see or receive your payment details</strong> — Apple
 processes payment and does not share your card information with us. You manage or cancel a subscription
 through Apple: in the Settings app (your name, then Subscriptions), or with <em>Manage subscription</em>
-in Reply Buddy's Settings, which opens Apple's own page.</p>
+in Reply Buddy's Settings, which opens Apple's own page. If you allowed tracking and Share usage data is
+on, Meta also learns that you started a free trial or first paid, with the plan's price (section 9A).</p>
 
 <h2>11. Permissions the app asks for</h2>
 <table>
   <tr><th>Permission</th><th>Why</th><th>If you decline</th></tr>
   <tr><td>Photos (full access)</td><td>To read your most recent screenshot for the keyboard and
       <em>Reply to a screenshot</em>; and, in Chat, to offer <em>Use latest screenshot</em>, which
-      attaches that screenshot to a new chat. It is sent only when you tap Send, and only once you have
+      attaches that screenshot to a new chat, or adds it to one. It is sent only when you tap Send, and only once you have
       allowed Chat to send pictures (section 5)</td><td>You can continue setup without it. Typing and
       saved replies still work and screenshot reading does not; Chat can still send a picture you pick
       with the photo picker, which needs no permission</td></tr>
@@ -474,35 +728,82 @@ in Reply Buddy's Settings, which opens Apple's own page.</p>
   <tr><td>Share age range (only where the law requires an age check, on iOS 26.2 or later)</td><td>To
       confirm you are 18 or older (section 15)</td><td>Where the law requires you to share it, Reply
       Buddy does not open</td></tr>
+  <tr><td>Allow tracking (iOS's tracking request, asked once — during setup, or from Settings → Privacy
+      &amp; data → Tracking — and only while Share usage data is on)</td><td>So that Meta can tell us which of our ads led to your install, trial or subscription,
+      and deliver our ads better; outside the states where it applies Limited Data Use, Meta may also use
+      it to personalise the ads and other content it shows you (section 9A)</td><td>Meta's software is not started, and nothing else changes: the app, its prices
+      and its free trial are the same. You can change your answer at any time in the Settings app, under
+      Privacy &amp; Security → Tracking</td></tr>
 </table>
 
-<h2>12. We do not sell or share your personal information</h2>
-<p>We do not sell your personal information, and we have not done so. We do not share it for
-cross-context behavioural advertising, use it for targeted advertising, or use it for profiling that
-produces legal or similarly significant effects, and we have not done so. There is no advertising in
-Reply Buddy and no advertising network receives anything from it. We do not use your message content to
-build a profile of you, and we use it for nothing except writing the reply you asked for and keeping
-that reply safe (section 4). Nevada residents may direct us not to sell covered information about them
-by writing to <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a>; we do not sell it,
-and we answer within 60 days.</p>
+<h2>12. Selling, sharing and advertising</h2>
+<p>We have never sold your personal information for money. We never sell, share or use for advertising
+anything from your conversations — no screenshot, picture, text, draft, reply, writing sample or
+instruction — nor the mode you use or the answers to the safety checks (section 4). We do not use your
+message content to build a profile of you, and we use it for nothing except writing the reply you asked
+for and keeping that reply safe. We do not use personal information for profiling that produces legal or
+similarly significant effects. There are no ads in Reply Buddy.</p>
 
-<p><strong>Tracking and &ldquo;Do Not Track&rdquo;.</strong> Reply Buddy does not track you across other
-companies' apps or websites, and it does not let anyone else do so. It shows no ads, does not use
-Apple's advertising identifier and never asks to track you. No other company collects personal
-information about your activity over time and across different apps or websites when you use Reply
-Buddy: PostHog, Sentry and RevenueCat see only how Reply Buddy itself is used, and only on our behalf.
-Because we do no cross-site tracking, there is nothing for a browser's &ldquo;Do Not Track&rdquo;
-signal to switch off; the app has no web views and does not receive one.</p>
+<p>We use personal information for advertising in one way only: to measure our own ads for Reply Buddy
+through Meta, and to let Meta use that to deliver them better, and only if you allow tracking and leave Share usage data on (section 9A). Some state
+privacy laws may count what Meta then receives as a &ldquo;sale&rdquo; of personal information, as
+&ldquo;sharing&rdquo; it for cross-context behavioural advertising, or as processing it for
+&ldquo;targeted advertising&rdquo;, even though no money changes hands. In the states where Meta applies
+Limited Data Use, Meta has agreed to handle it only as our service provider or processor; elsewhere its
+own terms also let it use it for its own purposes (section 9A). Where a law does count it that way, the
+personal information involved is: identifiers (Apple's advertising identifier, Meta's identifier for the
+installation and your IP address); commercial information (that you started a free trial or first paid,
+with the plan's price); internet or other electronic network activity (that the app was installed, your
+visits to it and how long each lasted, and that setup was finished); geolocation data (the approximate
+location, such as your state, that Meta works out from your IP address — not your precise location, which
+the app never collects); and details of your device. The only recipient is Meta, an advertising platform.
+We have done this only since 30 September 2026, and only for people who allowed tracking and left Share
+usage data on.</p>
+
+<p id="opt-out"><strong>You can opt out at any time, wherever you live</strong>: choose <strong>Ask App
+Not to Track</strong> when iOS asks; turn tracking off for Reply Buddy in the Settings app, under Privacy
+&amp; Security → Tracking; or turn <strong>Share usage data</strong> off in Reply Buddy's Settings. Each of
+these stops the app sending Meta any more of the events in section 9A. A choice you make in Reply Buddy
+takes effect at once; a change you make in the Settings app is read when you return to Reply Buddy,
+before anything more can be sent. Once Meta's software has stopped, it starts again only the next time
+the app is launched, and only if tracking and Share usage data are both on by then (section 9A).
+Turning off <strong>Allow Apps to Request to Track</strong> in the Settings app (under Privacy &amp;
+Security → Tracking) and choosing <strong>Ask Apps to Stop Tracking</strong> also opts Reply Buddy out.
+If you email <a href="mailto:tiko23miko23@gmail.com">tiko23miko23@gmail.com</a> instead, we will reply
+with how to use one of these; what Meta receives carries no identifier of ours, so we cannot switch it off
+for you from here. Someone you authorise can also opt out for you: with your permission they can use one
+of these settings on your phone, or write to the same address showing that you authorised them, and we
+will reply to them as we would to you. We will not treat you differently for opting out, or for having
+someone do it for you. Nevada residents may direct us not to sell covered information about them by
+writing to the same address; we do not sell it, and we answer within 60 days.</p>
+
+<p><strong>Tracking and &ldquo;Do Not Track&rdquo;.</strong> Reply Buddy shows no ads, and it does not
+track you unless you allow it. iOS asks, once — during setup, or when you ask for it in Settings (section
+9A) — whether Reply Buddy may track your activity across other companies' apps and websites. If you
+choose <strong>Allow</strong> and Share usage data is
+on, the app lets Meta's software send Meta the events in section 9A with Apple's advertising identifier,
+and Meta can link them with what it knows about you from other apps and websites to tell us which of our
+ads led to them, and for the other uses in section 9A. That is tracking, in Apple's sense, and it means another company, Meta, collects
+personal information about your activity over time and across different apps and websites when you use
+Reply Buddy. If you choose <strong>Ask App Not to Track</strong>, the app does not start Meta's software,
+sends Meta nothing and does not read the advertising identifier. PostHog, Sentry and RevenueCat see only
+how Reply Buddy itself is used, and only on our behalf; RevenueCat also records your answer to Reply
+Buddy's tracking question (section 8), never the advertising identifier. Reply Buddy does not respond to
+a browser's &ldquo;Do Not Track&rdquo; or Global Privacy Control signal, because as an app with no web
+views it never receives one; the choice it follows is Apple's tracking setting, as above.</p>
 
 <h2>13. Where your information comes from</h2>
 <p>Three sources, and no others: <strong>from you</strong> (the screenshot you choose to capture, the
 picture you choose to send from Chat and what you type there, your draft, your writing samples, your
 settings, and anything you email us); <strong>from your device</strong> (the App Attest key; details of
 the device and the app, such as the device model, the operating-system and app versions, language, time
-zone, screen size and whether it is on Wi-Fi or cellular, as described in section 9; and the IP address
-and the app's standard user-agent string that any request carries); and <strong>from Apple and
-RevenueCat</strong> (whether a subscription is active and, where the law requires, your age range —
-section 15).</p>
+zone, screen size and whether it is on Wi-Fi or cellular, as described in sections 9 and 9A; whether you
+allowed tracking, which RevenueCat's software also records (section 8), and, only if you did, Apple's
+advertising identifier, which only Meta's software reads (section 9A); Apple's identifier for vendor,
+which RevenueCat's software sends to RevenueCat (section 2); and the IP address and the app's standard user-agent string that any request carries); and
+<strong>from Apple and RevenueCat</strong> (whether a subscription is active and, where the law requires,
+your age range — section 15). Meta's reports tell us how our ads performed, but only as totals that
+identify no one (section 9A).</p>
 
 <h2>14. Apple's privacy label</h2>
 <p>In the App Store, Reply Buddy declares:</p>
@@ -511,13 +812,27 @@ section 15).</p>
       Messages, and Other User Content: the picture you send from Chat, the conversation read from a
       screenshot and your writing samples, and what you type. It is not linked because our AI provider,
       which keeps it, receives no identifier with it (section 7).</li>
-  <li><strong>Data linked to you, through the anonymous identifier:</strong> Identifiers (User ID, and
-      Device ID for the per-install device key and token and PostHog's and Sentry's installation
-      identifiers); Purchases (Purchase History); Usage Data
+  <li><strong>Data linked to you:</strong> through the anonymous identifier, Identifiers (User ID, and
+      Device ID for the per-install device key and token, PostHog's and Sentry's installation
+      identifiers, and Apple's identifier for vendor, which RevenueCat receives); Purchases (Purchase
+      History); Usage Data
       (Product Interaction); Diagnostics (Crash Data, Performance Data and Other Diagnostic Data); and
       Location (Coarse Location — the approximate location our providers work out from an IP address,
-      sections 6 and 9).</li>
-  <li><strong>No tracking</strong>, in Apple's sense or any other.</li>
+      sections 6 and 9). Separately, and only through Apple's advertising identifier and Meta's identifier
+      for the installation — never through ours — Other Data Types: the device details Meta's software
+      adds to each event, only if you allow tracking (section 9A), declared for Analytics, Developer's
+      Advertising or Marketing, and Third-Party Advertising.</li>
+  <li><strong>Data used to track you</strong>, only if you allow tracking (section 9A): Identifiers
+      (Device ID — Apple's advertising identifier and Meta's identifier for the installation), Purchases
+      (Purchase History — that you started a free trial or first paid, with the plan's price), Usage Data
+      (Product Interaction — that the app was installed, your visits to it and how long each lasted, and
+      that setup was finished), Location (Coarse Location — the rough location Meta works out from your
+      IP address) and Other Data Types (the details Meta's software adds to each event: the device model,
+      iOS version, language, time zone, screen size, number of processor cores and mobile carrier —
+      section 9A), for our own advertising and, outside the states where Meta applies Limited Data Use,
+      for the ads and other content Meta shows (in Apple's terms, Developer's Advertising or Marketing, and
+      Third-Party Advertising). The label shows this section to everyone, because it describes the app, not
+      your answer.</li>
 </ul>
 <p>Sensitive details that appear inside what you send — someone's health, say — are declared as the
 User Content types above, not as separate Health or Sensitive Info types: Apple's guidance says
@@ -526,7 +841,7 @@ in the app through free-form fields&rdquo;, and the app never asks for any of it
 
 <p>We declare User Content because Apple defines collection as transmitting data off the device and
 storing it in readable form for longer than it takes to service the request — and our AI provider's
-thirty-day deletion window is longer than that. We would rather over-declare than describe this
+thirty-day deletion window, longer for what its safety systems flag, is longer than that. We would rather over-declare than describe this
 inaccurately.</p>
 
 <h2>15. Children and teenagers</h2>
@@ -539,8 +854,9 @@ applies, the app asks Apple, through that feature, whether the account belongs t
 It does not open for anyone Apple reports as under 18, nor, where the law requires you to share your age
 range, until you do; if the check cannot finish, or Apple's answer does not show whether you are 18, it
 does not open and offers to try again. An installation that is turned away stops sending anything to our
-AI; typing with the keyboard still works. The app keeps only whether the check passed, on your phone; it
-never sends your age range to us or to anyone else.</p>
+AI, and never starts Meta's software or Apple's ad measurement (section 9A); typing with the keyboard
+still works. The app keeps only whether the check passed, on your phone; it never sends your age range to
+us or to anyone else.</p>
 
 <p>If you believe someone under 18 has used the app, write to us — with the anonymous ID from Settings →
 About if you can — and we will delete what our database holds for that installation.</p>
@@ -553,16 +869,50 @@ analytics provider, PostHog, to delete the analytics tied to it, and our subscri
 RevenueCat, to delete the purchase record it holds for it. It turns AI replies off and signs the app
 out. It does not cancel a subscription — you manage that through Apple (section 10) — and afterwards <em>Restore purchases</em> brings an active subscription back to the app. It
 cannot reach the copy our AI provider holds: Anthropic deletes it within 30 days of each send, or keeps
-it longer — up to two years if its safety systems flag it, or as long as the law requires — and it does
-not delete early on request (section 7). Nor does it reach our hosting provider's own request records
-(section 6), which carry the identifier and your IP address and expire on the schedule Supabase sets, or
-crash reports already sent to Sentry, which expire on the schedule in section 6. You can also delete your chats alone at any
-time (section 6), and the app's files by deleting the app; the sign-in in the iOS keychain may outlive
-it (section 6). To stop anything further being sent, turn AI replies off (section 5).</p>
+it longer — up to two years if its safety systems flag it, or as long as the law requires — and it offers
+no published way to delete an individual request early. If you email us a request to delete, we pass it
+on to our hosting provider, Supabase, whose request records carry your identifier (section 6), and to
+Anthropic, though without an identifier from us Anthropic may not be able to find what you sent (section
+7). Nor does <em>Delete my data</em> reach our hosting provider's own request records
+(section 6), which carry the identifier and your IP address and expire on the schedule Supabase sets,
+crash reports already sent to Sentry, which expire on the schedule in section 6, or, if you allowed
+tracking, the events Meta has already received, which Meta keeps under its own policy (section 9A).
+<em>Delete my data</em> also stops Meta's software, if it is running, and keeps it from running until the
+app is next launched, so none of the events in section 9A is sent in the meantime. It erases what Meta's
+software keeps on your phone — its identifier for the installation and any events not yet sent, which
+are then never sent — straight away if Meta's software has not run since the app was launched, otherwise
+the next time the app is launched, before Meta's software can start; the record that it reported the
+installation stays, so that Meta is not told of a second one. The app also forgets which ad-measurement moments
+it has counted, apart from the number already given to Apple's ad measurement. If you still allow
+tracking and still share usage data, Meta's software starts again at the next launch, afresh, with a new
+identifier for the installation (Apple's advertising identifier, which belongs to the device, stays the
+same); to stop it for good, turn one of them off (section 9A). You can also
+delete your chats alone at any time (section 6), and the app's files by deleting the app; the sign-in in
+the iOS keychain may outlive it (section 6). To stop anything further being sent to our AI provider,
+turn AI replies off (section 5); to stop analytics, crash reports and ad measurement, turn Share usage data
+off (sections 9 and 9A).</p>
+
+<p><strong>What <em>Delete my data</em> can miss.</strong> Our server ignores a notice from RevenueCat
+about an identifier that no longer exists, so a notice about your subscription that arrives after the
+deletion — for example, about a cancellation you made just before — writes nothing and asks RevenueCat
+nothing. One that arrives while the deletion is still running can create a new subscription record
+under the deleted identifier: whether Pro is active, when it ends, the store and when the notice was
+sent. A job that runs every day deletes any subscription record whose identifier no longer exists, once
+the record is a day old. Also while the deletion is running, the app refreshing your subscription
+status, or our server checking such a notice with RevenueCat (as it does for a payment problem during a
+grace period, or a temporary grant), can create a new customer record at RevenueCat under the deleted
+identifier, which nothing removes automatically. And PostHog can delete only what it has received when
+we ask. A few usage events recorded shortly before — for example in the half-minute before you last turned Share usage data off, or while the
+deletion is running — may still be waiting on your phone. If so, they reach PostHog under the deleted
+identifier afterwards (if Share usage data is off, the next time it is on), and PostHog keeps them for
+the period in section 6. Turning Share usage data off before using <em>Delete my data</em> does not
+prevent this.</p>
 
 <p><strong>Other requests.</strong> Wherever you live, you can ask us to tell you whether we hold
-personal information about you and give you a copy of it, to correct it, to delete it, or to tell you
-which third parties we have sold it to — there are none, because we do not sell it. These rights also
+personal information about you and give you a copy of it, to correct it, to delete it, to tell you
+which third parties we have sold it to or shared it with for advertising — the only one there could be is
+Meta, and only if you allowed tracking (section 12) — and to opt out of any sale, sharing or targeted
+advertising (section 12 says how, and when each way takes effect). These rights also
 belong to someone whose messages or photos were in a conversation a Reply Buddy user sent, even if they
 have never used the app. If you use Reply Buddy, you can also withdraw your consent to AI replies at
 any time (section 5). Email
@@ -592,8 +942,11 @@ has read a screenshot, editing it in Photos does not change the words it sends, 
 screenshot instead.</p>
 
 <h2>18. Data transfers and security</h2>
-<p>Our servers and our AI provider operate in the United States, so if you use the app elsewhere your
-message text, and from Chat the picture you send, are processed there. All transmission is encrypted
+<p>Reply Buddy is offered only through the United States App Store and is intended for people in the
+United States. Our servers and our AI provider operate in the United States, so if you use the app elsewhere your
+message text, and from Chat the picture you send, are processed there. Meta, which receives the events
+in section 9A only if you allow tracking, operates worldwide and may process them outside the country you
+are in. All transmission is encrypted
 in transit (HTTPS/TLS). The conversation stored on your device, and your chats, are written with iOS
 file protection so they are unreadable while your phone is locked. No transmission or storage is ever
 completely secure, and we cannot promise absolute security.</p>
@@ -613,7 +966,7 @@ the change will not apply to information collected before it.</p>
 <footer>
   <p class="meta">Reply Buddy: AI Keyboard · <a href="terms.html">Terms of Use</a> ·
   <a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a> · Last updated
-  28 September 2026</p>
+  30 September 2026</p>
 </footer>
 
 </div>
