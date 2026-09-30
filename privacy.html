@@ -361,8 +361,9 @@ anonymous identifier. Our own log lines do not record your IP address.</p>
       miss)</td></tr>
   <tr><td>Sentry</td><td>Crash and error reports and session records (section 9)</td><td>Up to 90
       days</td></tr>
-  <tr><td>RevenueCat</td><td>Your purchase record (section 10)</td><td>Until you delete it with
-      <em>Delete my data</em>, or for as long as the subscription record is needed</td></tr>
+  <tr><td>RevenueCat</td><td>Your purchase record (section 10)</td><td>Until <em>Delete my data</em>
+      asks RevenueCat to delete it (section 16 says what that may not reach), or for as long as the
+      subscription record is needed</td></tr>
   <tr><td>Meta</td><td>The ad-measurement events in section 9A, only if you allowed tracking</td><td>For
       as long as Meta's own policy allows. We cannot delete them, and <em>Delete my data</em> does not
       reach them (section 16)</td></tr>
@@ -474,7 +475,7 @@ not claim your conversations vanish the instant they are used, because that woul
       picker, App Attest, its own ad measurement (section 9A) and, where the law requires, your age range
       (section 15)</td></tr>
   <tr><td>RevenueCat</td><td>Receives with each request the app and iOS version, the device model, your
-      preferred languages, your App Store country and Apple's identifier for vendor (section 2). Records
+      preferred languages, your App Store country and Apple's identifier for vendor (section 2), and may keep them. Records
       what you bought and whether it is still active, the app and iOS version, when the app was first and
       last seen, and a country — from your purchase, or worked out from your IP address, which RevenueCat
       does not keep — and whether you allowed tracking, which RevenueCat's software reads from iOS and
@@ -650,12 +651,12 @@ for.</p>
 and lets Meta work out your state from your IP address. In the US states where Meta applies it — at the
 time of writing California, Colorado, Connecticut, Delaware, Florida, Maryland, Minnesota, Montana,
 Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island and Texas — Meta has agreed to handle the events
-only as our service provider or processor, and not to sell or share them. In other states, and outside the
+only as our service provider or processor (and, in California, not to sell or share them). In other states, and outside the
 United States, the setting has no effect: Meta's
 <a href="https://www.facebook.com/legal/businesstech">Business Tools Terms</a> then also let it use the
 events for its own purposes, such as personalising the ads and content it shows, under
 <a href="https://www.facebook.com/privacy/policy/">Meta's Privacy Policy</a>. Meta lists the states on its
-<a href="https://developers.facebook.com/docs/marketing-apis/data-processing-options/">page about Limited
+<a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/data-processing-options">page about Limited
 Data Use</a>.</p>
 
 <h3>Apple's own ad measurement, whatever your answer</h3>
@@ -698,7 +699,8 @@ time it went on counting while stopped — apart from the record that it reporte
 with a new identifier for the installation; Apple's advertising identifier, which belongs to the device,
 stays the same. What Meta has already received stays with Meta, under its own policy: we
 cannot delete it, and <em>Delete my data</em> does not reach it (section 16). In Meta's Accounts Center
-(in the Facebook or Instagram app), the setting <em>Activity from other businesses</em> lets you choose
+(in the Facebook or Instagram app: Settings and privacy → Accounts Center → Your information and
+permissions), the setting <em>Activity from other businesses</em> lets you choose
 whether Meta uses the activity that businesses such as us send it to personalise the ads and other content
 it shows you. It changes how Meta uses that information, not whether Meta receives or keeps it; to stop
 Reply Buddy sending anything to Meta, use the choices above.
@@ -774,7 +776,8 @@ with how to use one of these; what Meta receives carries no identifier of ours, 
 for you from here. Someone you authorise can also opt out for you: with your permission they can use one
 of these settings on your phone, or write to the same address showing that you authorised them, and we
 will reply to them as we would to you. We will not treat you differently for opting out, or for having
-someone do it for you. Nevada residents may direct us not to sell covered information about them by
+someone do it for you. We honour these choices whether or not a particular state's privacy law applies
+to Reply Buddy. Nevada residents may direct us not to sell covered information about them by
 writing to the same address; we do not sell it, and we answer within 60 days.</p>
 
 <p><strong>Tracking and &ldquo;Do Not Track&rdquo;.</strong> Reply Buddy shows no ads, and it does not
@@ -870,12 +873,13 @@ RevenueCat, to delete the purchase record it holds for it. It turns AI replies o
 out. It does not cancel a subscription — you manage that through Apple (section 10) — and afterwards <em>Restore purchases</em> brings an active subscription back to the app. It
 cannot reach the copy our AI provider holds: Anthropic deletes it within 30 days of each send, or keeps
 it longer — up to two years if its safety systems flag it, or as long as the law requires — and it offers
-no published way to delete an individual request early. If you email us a request to delete, we pass it
-on to our hosting provider, Supabase, whose request records carry your identifier (section 6), and to
-Anthropic, though without an identifier from us Anthropic may not be able to find what you sent (section
-7). Nor does <em>Delete my data</em> reach our hosting provider's own request records
+no published way to delete an individual request early. If you email us a request to delete, with the anonymous ID from Settings → About, we delete
+what our database holds for it, as Delete my data does; what Anthropic already received carries no
+identifier from us, so it is deleted on Anthropic's schedule above, not on request. Nor does <em>Delete my data</em> reach our hosting provider's own request records
 (section 6), which carry the identifier and your IP address and expire on the schedule Supabase sets,
-crash reports already sent to Sentry, which expire on the schedule in section 6, or, if you allowed
+crash reports already sent to Sentry, which expire on the schedule in section 6, anything RevenueCat
+keeps apart from the purchase record, which may include what its software sent with each request, such
+as Apple's identifier for vendor (section 8), and RevenueCat's own backups, or, if you allowed
 tracking, the events Meta has already received, which Meta keeps under its own policy (section 9A).
 <em>Delete my data</em> also stops Meta's software, if it is running, and keeps it from running until the
 app is next launched, so none of the events in section 9A is sent in the meantime. It erases what Meta's
